@@ -13,7 +13,7 @@ class GameState
     @player = Player.new
     # puts @castle_data[0]["rooms"][0]["monster"]["name"]
   end
-  
+
   def play
     unless game_over
       move_phase
@@ -23,18 +23,24 @@ class GameState
   end
 
   def castle_select
+    @castles = []
     @castle_data.each do |castle|
-      puts castle["name"]
+      @castles << castle["name"]
     end
+
+    @castles.each do |castle|
+      puts castle
+    end
+
     puts "*" * 25
-    puts "Please select a castle (0-4)"
+    puts "Please select a castle."
     puts "*" * 25
-    @selected_castle = gets.chomp.to_i
-    if @selected_castle.between?(0,4)
-      puts "You have selected #{@castle_data[@selected_castle]["name"]}"
+    @selected_castle = gets.chomp
+    if castle_valid?
+      puts "You have selected #{@selected_castle}"
     else
       puts "*" * 25
-      puts "ERROR: Please select a castle within range!"
+      puts "ERROR: Please select a valid castle!"
       puts "*" * 25
       castle_select
     end
@@ -51,15 +57,21 @@ class GameState
     end
 
     puts "*" * 25
-    puts "Please select a room. (0-2)"
+    puts "Please select a room."
     puts "*" * 25
     @selected_room = gets.chomp
     if room_valid?
       puts "You have selected #{@selected_room}"
     else
-      puts "Please select a valid room"
+      puts "*" * 25
+      puts "ERROR: Please select a valid room!"
+      puts "*" * 25
       room_select
     end
+  end
+
+  def castle_valid?
+    @castles.include?(@selected_castle)
   end
 
   def room_valid?
@@ -72,7 +84,6 @@ class GameState
   end
 
   def monster_encounter
-
   end
 
   def game_over
