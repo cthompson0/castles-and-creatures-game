@@ -1,0 +1,225 @@
+[
+  {
+    "name": "Old Timey Medieval Castle",
+    "rooms": [
+      {
+        "name": "dungeon",
+        "monster": {
+          "name": "skeleton warden",
+          "win_chance": 95
+        },
+        "treasure": {
+          "type": "jail cell key",
+          "points": 10
+        }
+      },
+      {
+        "name": "the endless staircase",
+        "monster": {
+          "name": "cursed princess",
+          "win_chance": 80
+        },
+        "treasure": {
+          "type": "a ruby necklace",
+          "points": 25
+        }
+      },
+      {
+        "name": "throne room",
+        "monster": {
+          "name": "the evil dragon",
+          "win_chance": 70
+        },
+        "treasure": {
+          "type": "the dragon's hoard",
+          "points": 100
+        }
+      }
+    ]
+  },
+  {
+    "name": "Crystal Winter Palace",
+    "rooms": [
+      {
+        "name": "the frosty willow garden",
+        "monster": {
+          "name": "living ice sculptures",
+          "win_chance": 85
+        },
+        "treasure": {
+          "type": "frozen rose",
+          "points": 25
+        }
+      },
+      {
+        "name": "the singing halls",
+        "monster": {
+          "name": "frozen ballerina army",
+          "win_chance": 85
+        },
+        "treasure": {
+          "type": "the nutcracker",
+          "points": 35
+        }
+      },
+      {
+        "name": "opal ballroom",
+        "monster": {
+          "name": "mirror demon",
+          "win_chance": 75
+        },
+        "treasure": {
+          "type": "crystal sword",
+          "points": 100
+        }
+      }
+    ]
+  },
+  {
+    "name": "Glowy Underwater Palace",
+    "rooms": [
+      {
+        "name": "the kelp forest",
+        "monster": {
+          "name": "Shark Greasers",
+          "win_chance": 70
+        },
+        "treasure": {
+          "type": "shark tooth necklace",
+          "points": 35
+        }
+      },
+      {
+        "name": "the reef dining room",
+        "monster": {
+          "name": "lord whaleshark",
+          "win_chance": 70
+        },
+        "treasure": {
+          "type": "pearl sceptre",
+          "points": 35
+        }
+      },
+      {
+        "name": "the abyssal overlook",
+        "monster": {
+          "name": "mermaid queen",
+          "win_chance": 50
+        },
+        "treasure": {
+          "type": "the scale crown",
+          "points": 100
+        }
+      }
+    ]
+  },
+  {
+    "name": "Flashy Fancy Casino Palace",
+    "rooms": [
+      {
+        "name": "the glittering lobby",
+        "monster": {
+          "name": "the insidious butler",
+          "win_chance": 85
+        },
+        "treasure": {
+          "type": "keycard",
+          "points": 55
+        }
+      },
+      {
+        "name": "the poolside",
+        "monster": {
+          "name": "the piano man",
+          "win_chance": 60
+        },
+        "treasure": {
+          "type": "a golden scale",
+          "points": 65
+        }
+      },
+      {
+        "name": "the piano bar",
+        "monster": {
+          "name": "the piano man",
+          "win_chance": 60
+        },
+        "treasure": {
+          "type": "a golden scale",
+          "points": 65
+        }
+      },
+      {
+        "name": "high limit room",
+        "monster": {
+          "name": "the joker",
+          "win_chance": 40
+        },
+        "treasure": {
+          "type": "the jackpot",
+          "points": 100
+        }
+      }
+    ]
+  },
+  {
+    "name": "Futuristic Sparkly Space Palace",
+    "rooms": [
+      {
+        "name": "the space shuttle",
+        "monster": {
+          "name": "a wookie?",
+          "win_chance": 35
+        },
+        "treasure": {
+          "type": "millenium falcon keys",
+          "points": 80
+        }
+      },
+      {
+        "name": "lunar reception hall",
+        "monster": {
+          "name": "ursa major",
+          "win_chance": 40
+        },
+        "treasure": {
+          "type": "minature comet",
+          "points": 100
+        }
+      },
+      {
+        "name": "the moonwell",
+        "monster": {
+          "name": "lunar goddess",
+          "win_chance": 40
+        },
+        "treasure": {
+          "type": "orion's belt",
+          "points": 100
+        }
+      },
+      {
+        "name": "the starway",
+        "monster": {
+          "name": "the celestial",
+          "win_chance": 35
+        },
+        "treasure": {
+          "type": "forever sunlight",
+          "points": 100
+        }
+      },
+      {
+        "name": "the void",
+        "monster": {
+          "name": "the faceless automaton",
+          "win_chance": 20
+        },
+        "treasure": {
+          "type": "the heart of a star",
+          "points": 1000
+        }
+      }
+    ]
+  }
+]
