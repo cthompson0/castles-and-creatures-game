@@ -3,6 +3,7 @@ require_relative 'player'
 
 # Game loop determines if player.lives = 0
 # Should be aware of max pts possible to determine if all treasure found
+
 class GameState
   attr_accessor :player
 
@@ -12,8 +13,7 @@ class GameState
     @player = Player.new
     # puts @castle_data[0]["rooms"][0]["monster"]["name"]
   end
-
-
+  
   def play
     unless game_over
       move_phase

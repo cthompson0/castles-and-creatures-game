@@ -22,16 +22,6 @@ require_relative 'player'
 # Game must handle player interaction returning, display of menus, room choices, lives and treasure pts.
 # One character commands: fight, bluff, move
 
-# Use this for JSON input?
-# class Level
-#   def initialize(file)
-#     # file = File.read('game-layout.json')
-#     # @data_hash = 0JSON.parse(file)
-#   end
-# end
-
-
-
 @new_game = GameState.new
 @new_game.play
 

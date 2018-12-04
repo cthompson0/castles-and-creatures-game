@@ -10,16 +10,4 @@ class Player
     @lives = lives
     @treasure = treasure
   end
-
-  def commands
-  end
-
-  def move
-  end
-
-  def fight
-  end
-
-  def bluff
-  end
 end
