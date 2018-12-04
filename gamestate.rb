@@ -11,6 +11,12 @@ class GameState
     file = File.read('game-layout.json')
     @castle_data = JSON.parse(file)
     @player = Player.new
+
+    @castle_mapping = { }
+    @castle_data.each_with_index do |name, index|
+      @castle_mapping[@castle_data[index]["name"]] = index
+    end
+
     # puts @castle_data[0]["rooms"][0]["monster"]["name"]
   end
 
@@ -48,7 +54,7 @@ class GameState
 
   def room_select
     @rooms = []
-    @castle_data[@selected_castle]["rooms"].each do |room|
+    @castle_data[@castle_mapping[@selected_castle]]["rooms"].each do |room|
       @rooms << room["name"]
     end
 
