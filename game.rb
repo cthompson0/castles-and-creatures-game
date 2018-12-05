@@ -24,5 +24,3 @@ require_relative 'player'
 
 @new_game = GameState.new
 @new_game.play
-
-@new_game.player.move
