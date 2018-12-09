@@ -1,28 +1,34 @@
 require 'json'
 require_relative 'player'
+require_relative 'room'
+require_relative 'castle'
 
 # Game loop determines if player.lives = 0
 # Should be aware of max pts possible to determine if all treasure found
+
+# Integration tests: Player can win and player can lose
+# Write more tests
+# MAKE A DAMN README
+
+# Player will not choose castle, castles will be sequential.
 
 class GameState
   attr_accessor :player
 
   def initialize
+    # User must provide this json file via CLI
     file = File.read('game-layout.json')
     @castle_data = JSON.parse(file)
-    @player = Player.new
+    @castles = []
 
-    @castle_mapping = { }
+    @player = Player.new
     @castle_data.each_with_index do |name, index|
-      @castle_mapping[@castle_data[index]["name"]] = index
+      @castles << Castle.new(@castle_data[index]["name"])
     end
 
-    # @room_mapping = { }
-    # @room_mapping.each_with_index do |name, index|
-    #   @room_mapping[@castle_data[index]["name"] = index]
-    # end
-
-    # puts @castle_data[@castle_mapping["Old Timey Medieval Castle"]]["rooms"][0]["monster"]["name"]
+    @castles.each do |castle|
+      puts castle.name
+    end
   end
 
   def play
@@ -34,14 +40,8 @@ class GameState
   end
 
   def castle_select
-    @castles = []
-    @castle_data.each do |castle|
-      @castles << castle["name"]
-    end
 
-    @castles.each do |castle|
-      puts castle
-    end
+    # Player will be given castles sequentially
 
     puts "*" * 25
     puts "Please select a castle."
@@ -58,14 +58,17 @@ class GameState
   end
 
   def room_select
-    @rooms = {}
-    @castle_data[@castle_mapping[@selected_castle]]["rooms"].each_with_index do |room, index|
-      @rooms[room["name"]] = index
-    end
+    # Player will be given rooms sequentially after castle is given
 
-    @rooms.each do |room, v|
-      puts room
-    end
+
+    # @rooms = {}
+    # @castle_data[@castle_mapping[@selected_castle]]["rooms"].each_with_index do |room, index|
+    #   @rooms[room["name"]] = index
+    # end
+    #
+    # @rooms.each do |room, v|
+    #   puts room
+    # end
 
     puts "*" * 25
     puts "Please select a room."
@@ -97,9 +100,27 @@ class GameState
 
   def monster_encounter
     monster_name = @castle_data[@castle_mapping[@selected_castle]]["rooms"][@rooms[@selected_room]]["monster"]["name"]
+
     puts "*" * 25
     puts "You encounter a #{monster_name}!"
     puts "*" * 25
+    monster_encounter_move
+  end
+
+  def monster_encounter_move
+    fighting_chance = @castle_data[@castle_mapping[@selected_castle]]["rooms"][@rooms[@selected_room]]["monster"]["win_chance"] * 0.01
+    bluffing_chance = 0.30
+
+    puts "What would you like to do?"
+    puts "Fight | Bluff"
+    @selected_move = gets.chomp
+    if @selected_room == "Fight"
+
+    elsif @selected_room == "Bluff"
+    else
+      "ERROR: Please select a valid action!"
+      monster_encounter_move
+    end
   end
 
   def game_over

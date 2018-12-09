@@ -1,5 +1,7 @@
 require_relative 'gamestate'
 require_relative 'player'
+require_relative 'castle'
+require_relative 'room'
 
 # RULES OF THE GAME
 

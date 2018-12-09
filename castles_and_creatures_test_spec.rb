@@ -13,6 +13,3 @@ describe Player do
     expect(@player.treasure).to eq(0)
   end
 end
-
-
-
