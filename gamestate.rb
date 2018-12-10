@@ -19,15 +19,27 @@ class GameState
     # User must provide this json file via CLI
     file = File.read('game-layout.json')
     @castle_data = JSON.parse(file)
-    @castles = []
-
     @player = Player.new
-    @castle_data.each_with_index do |name, index|
+
+    @castles = []
+    @castle_data.each_with_index do |castle, index|
       @castles << Castle.new(@castle_data[index]["name"])
     end
 
+    
+    @castle_data.each_with_index do |castle, index|
+      @castle_data[index]["rooms"].each do |room|
+          @castles[index].rooms << Room.new(room["name"],
+                                            room["monster"]["name"],
+                                            room["monster"]["win_chance"],
+                                            room["treasure"]["type"],
+                                            room["treasure"]["points"])
+      end
+    end
+
     @castles.each do |castle|
-      puts castle.name
+      puts castle.rooms[1].points
+      puts "*"
     end
   end
 

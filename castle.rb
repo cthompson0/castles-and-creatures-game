@@ -6,7 +6,7 @@ class Castle
 
   def initialize(name)
     @name = name
-    @rooms = rooms
+    @rooms = []
 
     # @castle_data.each_with_index do |name, index|
     #   @castles << @castle_data[index]["name"]
@@ -18,6 +18,10 @@ class Castle
     # end
     #
     # puts @castles
+  end
+
+  def add_room
+
   end
 
 end
