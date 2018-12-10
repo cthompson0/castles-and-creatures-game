@@ -3,15 +3,6 @@ require_relative 'player'
 require_relative 'room'
 require_relative 'castle'
 
-# Game loop determines if player.lives = 0
-# Should be aware of max pts possible to determine if all treasure found
-
-# Integration tests: Player can win and player can lose
-# Write more tests
-# MAKE A DAMN README
-
-# Player will not choose castle, castles will be sequential.
-
 class GameState
   attr_accessor :player
 

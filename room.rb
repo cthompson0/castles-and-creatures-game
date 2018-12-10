@@ -1,3 +1,4 @@
+
 class Room
   attr_accessor :name, :monster, :treasure, :win_chance, :treasure, :points
 

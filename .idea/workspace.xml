@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e2aca806-8f10-417e-afef-f4e71094c7cf" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/castle.rb" beforeDir="false" afterPath="$PROJECT_DIR$/castle.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gamestate.rb" beforeDir="false" afterPath="$PROJECT_DIR$/gamestate.rb" afterDir="false" />
-    </list>
+    <list default="true" id="e2aca806-8f10-417e-afef-f4e71094c7cf" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,8 +85,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/gamestate.rb">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="224">
-                  <caret line="37" column="6" selection-start-line="37" selection-start-column="6" selection-end-line="37" selection-end-column="6" />
+                <state relative-caret-position="315">
+                  <caret line="21" column="17" lean-forward="true" selection-start-line="21" selection-start-column="17" selection-end-line="21" selection-end-column="17" />
                 </state>
               </provider>
             </entry>
@@ -492,7 +489,7 @@
       <option name="presentableId" value="Default" />
       <updated>1542751627646</updated>
       <workItem from="1542751629602" duration="17848000" />
-      <workItem from="1543617179067" duration="37225000" />
+      <workItem from="1543617179067" duration="37579000" />
     </task>
     <servers />
   </component>
@@ -529,7 +526,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="55073000" />
+    <option name="totallyTimeSpent" value="55427000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="36" y="32" width="1670" height="877" extended-state="0" />
@@ -549,7 +546,7 @@
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49642345" weight="0.3287841" />
-      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.22051597" side_tool="true" visible="true" weight="0.26412615" />
+      <window_info active="true" anchor="bottom" id="Event Log" order="11" sideWeight="0.22051597" side_tool="true" visible="true" weight="0.26412615" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -614,8 +611,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/gamestate.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="37" column="6" selection-start-line="37" selection-start-column="6" selection-end-line="37" selection-end-column="6" />
+        <state relative-caret-position="315">
+          <caret line="21" column="17" lean-forward="true" selection-start-line="21" selection-start-column="17" selection-end-line="21" selection-end-column="17" />
         </state>
       </provider>
     </entry>
