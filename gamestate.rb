@@ -19,14 +19,14 @@ class GameState
     # User must provide this json file via CLI
     file = File.read('game-layout.json')
     @castle_data = JSON.parse(file)
-    @player = Player.new
-
     @castles = []
+    @castle_order = 0
+    @room_order = 0
+    @player = Player.new
     @castle_data.each_with_index do |castle, index|
       @castles << Castle.new(@castle_data[index]["name"])
     end
 
-    
     @castle_data.each_with_index do |castle, index|
       @castle_data[index]["rooms"].each do |room|
           @castles[index].rooms << Room.new(room["name"],
@@ -35,11 +35,6 @@ class GameState
                                             room["treasure"]["type"],
                                             room["treasure"]["points"])
       end
-    end
-
-    @castles.each do |castle|
-      puts castle.rooms[1].points
-      puts "*"
     end
   end
 
@@ -52,86 +47,63 @@ class GameState
   end
 
   def castle_select
-
-    # Player will be given castles sequentially
-
-    puts "*" * 25
-    puts "Please select a castle."
-    puts "*" * 25
-    @selected_castle = gets.chomp
-    if castle_valid?
-      puts "You have selected #{@selected_castle}"
-    else
-      puts "*" * 25
-      puts "ERROR: Please select a valid castle!"
-      puts "*" * 25
-      castle_select
-    end
+    @current_castle = @castles[@castle_order].name
+    puts "You slowly approach a #{@current_castle} and venture inside."
   end
 
   def room_select
-    # Player will be given rooms sequentially after castle is given
-
-
-    # @rooms = {}
-    # @castle_data[@castle_mapping[@selected_castle]]["rooms"].each_with_index do |room, index|
-    #   @rooms[room["name"]] = index
-    # end
-    #
-    # @rooms.each do |room, v|
-    #   puts room
-    # end
-
-    puts "*" * 25
-    puts "Please select a room."
-    puts "*" * 25
-    @selected_room = gets.chomp
-    if room_valid?
-      puts "You have selected #{@selected_room}"
-    else
-      puts "*" * 25
-      puts "ERROR: Please select a valid room!"
-      puts "*" * 25
-      room_select
-    end
-  end
-
-  def castle_valid?
-    @castles.include?(@selected_castle)
-  end
-
-  def room_valid?
-    @rooms.include?(@selected_room)
+    @current_room = @castles[@castle_order].rooms[@room_order].name
+    puts "After entering the #{@castles[@castle_order].name}, you come across a #{@current_room}."
   end
 
   def move_phase
     castle_select
     room_select
     monster_encounter
+    player_move
+    move_phase
   end
 
   def monster_encounter
-    monster_name = @castle_data[@castle_mapping[@selected_castle]]["rooms"][@rooms[@selected_room]]["monster"]["name"]
-
-    puts "*" * 25
-    puts "You encounter a #{monster_name}!"
-    puts "*" * 25
-    monster_encounter_move
+    @current_monster = @castles[@castle_order].rooms[@room_order].monster
+    puts "While exploring the #{@current_room}, a #{@current_monster} jumps out in front of you!"
   end
 
-  def monster_encounter_move
-    fighting_chance = @castle_data[@castle_mapping[@selected_castle]]["rooms"][@rooms[@selected_room]]["monster"]["win_chance"] * 0.01
-    bluffing_chance = 0.30
+  def player_move
+    fighting_chance = @castles[@castle_order].rooms[@room_order].win_chance
+    bluffing_chance = 30
+    current_treasure = @castles[@castle_order].rooms[@room_order].treasure
+    treasure_points = @castles[@castle_order].rooms[@room_order].points
 
+    puts "*" * 25
     puts "What would you like to do?"
     puts "Fight | Bluff"
+    puts "*" * 25
     @selected_move = gets.chomp
-    if @selected_room == "Fight"
+    if @selected_move == "Fight"
+      if rand(100) < fighting_chance
+        puts "You successfully defeated the #{@current_monster}!"
+        puts "You find a #{current_treasure} clutched in a hand of the now lifeless #{@current_monster}."
+        puts "You quickly put it into your pouch. (+#{treasure_points} pts!)"
+      else
+        puts "The #{@current_monster} has defeated you."
+        puts "You have #{@player.lives} lives left."
+        puts "*" * 25
+        @player.lives -= 1
+      end
 
-    elsif @selected_room == "Bluff"
+    elsif @selected_move == "Bluff"
+      if rand(100) < bluffing_chance
+        puts "You successfully scare the #{@current_monster} and cause them to flee!"
+        puts "You find a #{current_treasure} on the floor where the #{@current_monster} was standing."
+        puts "You quickly put it into your pouch. (+#{treasure_points} pts!)"
+      else
+        puts "Your attempts to scare the #{@current_monster} have failed!"
+        puts "Looks like you will have to fight your way out!"
+        end
     else
       "ERROR: Please select a valid action!"
-      monster_encounter_move
+      player_move
     end
   end
 
