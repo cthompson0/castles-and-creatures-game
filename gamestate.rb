@@ -31,33 +31,30 @@ class GameState
 
   def play
     unless game_over
-      move_phase
+      castle_progression
+      room_progression
+      monster_encounter
+      player_move
+      play
     else
-      game_over
+      reset
+      play
     end
   end
 
-  def castle_select
+  def castle_progression
     @current_castle = @castles[@castle_order].name
     puts "You slowly approach a #{@current_castle} and venture inside."
   end
 
-  def room_select
+  def room_progression
     @current_room = @castles[@castle_order].rooms[@room_order].name
     puts "After entering the #{@castles[@castle_order].name}, you come across a #{@current_room}."
   end
 
-  def move_phase
-    castle_select
-    room_select
-    monster_encounter
-    player_move
-    move_phase
-  end
-
   def monster_encounter
     @current_monster = @castles[@castle_order].rooms[@room_order].monster
-    puts "While exploring the #{@current_room}, a #{@current_monster} jumps out in front of you!"
+    puts "#{@current_monster} jumps out in front of you!"
   end
 
   def player_move
@@ -65,7 +62,6 @@ class GameState
     bluffing_chance = 30
     current_treasure = @castles[@castle_order].rooms[@room_order].treasure
     treasure_points = @castles[@castle_order].rooms[@room_order].points
-
     puts "*" * 25
     puts "What would you like to do?"
     puts "Fight | Bluff"
@@ -76,11 +72,22 @@ class GameState
         puts "You successfully defeated the #{@current_monster}!"
         puts "You find a #{current_treasure} clutched in a hand of the now lifeless #{@current_monster}."
         puts "You quickly put it into your pouch. (+#{treasure_points} pts!)"
+        @player.treasure += treasure_points
+        if @current_room != @castles[@castle_order].rooms.last.name
+          @room_order += 1
+        elsif win_condition
+          puts "You have collected all the treasure!"
+          puts "Your score is #{@player.treasure} points!"
+        else
+          @castle_order += 1
+          @room_order = 0
+        end
       else
         puts "The #{@current_monster} has defeated you."
         puts "You have #{@player.lives} lives left."
         puts "*" * 25
         @player.lives -= 1
+        player_move
       end
 
     elsif @selected_move == "Bluff"
@@ -99,6 +106,22 @@ class GameState
   end
 
   def game_over
-    @player.lives == 0
+    @player.lives < 0
+  end
+
+  def win_condition
+    @castle_order == @castles.count && @room_order == @castles[@castle_order].rooms.count
+  end
+
+  def reset
+    puts "*" * 25
+    puts "Your score: #{@player.treasure}!"
+    puts "GAME OVER!"
+    puts "Starting a new game.."
+    puts "*" * 25
+    @player.lives = 9
+    @player.treasure = 0
+    @castle_order = 0
+    @room_order = 0
   end
 end

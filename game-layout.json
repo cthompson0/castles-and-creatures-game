@@ -130,7 +130,7 @@
       {
         "name": "the poolside",
         "monster": {
-          "name": "the piano man",
+          "name": "the pool boy",
           "win_chance": 60
         },
         "treasure": {
