@@ -1,5 +1,3 @@
-require_relative 'gamestate'
-
 class Player
   attr_accessor :lives, :treasure
 
