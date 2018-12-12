@@ -7,9 +7,7 @@ class GameState
   attr_accessor :player
 
   def initialize
-    # User must provide this json file via CLI
-    file = File.read('game-layout.json')
-    @castle_data = JSON.parse(file)
+    load_file
     @castles = []
     @castle_order = 0
     @room_order = 0
@@ -30,7 +28,6 @@ class GameState
     end
   end
 
-  # Why didnt this work?
   def play
     unless game_over?
       castle_progression
@@ -42,6 +39,13 @@ class GameState
       reset
       play
     end
+  end
+
+  def load_file
+    puts "Please enter a file or directory for castle data."
+    game_layout = gets.chomp
+    file = File.read(game_layout)
+    @castle_data = JSON.parse(file)
   end
 
   def castle_progression
