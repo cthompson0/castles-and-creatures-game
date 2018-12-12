@@ -30,6 +30,7 @@ class GameState
     end
   end
 
+  # Why didnt this work?
   def play
     unless game_over?
       castle_progression
@@ -44,8 +45,13 @@ class GameState
   end
 
   def castle_progression
-    @current_castle = @castles[@castle_order].name
-    puts "You slowly approach a #{@current_castle} and venture inside."
+    unless game_over?
+      @current_castle = @castles[@castle_order].name
+      puts "You slowly approach a #{@current_castle} and venture inside."
+    else
+      reset
+      play
+    end
   end
 
   def room_progression
@@ -100,7 +106,7 @@ class GameState
     when "treasure"
       puts "You currently have #{@treasure_points} points."
     when "lives"
-      puts "You currently have #{@player.lives} left."
+      puts "You currently have #{@player.lives} lives left."
     else
       puts "ERROR: Please select a valid action!"
       player_move
@@ -108,10 +114,10 @@ class GameState
   end
 
   def game_over?
-    @player.lives == 0
+    @player.lives <= 0
   end
 
-  def win_condition
+  def win_condition?
     @castle_order == @castles.count && @room_order == @castles[@castle_order].rooms.count
   end
   
@@ -128,7 +134,7 @@ class GameState
     @player.treasure += @treasure_points
     if @current_room != @castles[@castle_order].rooms.last.name
       @room_order += 1
-    elsif win_condition
+    elsif win_condition?
       puts "You have collected all the treasure!"
       puts "Your score is #{@player.treasure} points!"
     else
