@@ -28,13 +28,21 @@ describe Castle do
     end
   end
 
+  it "takes a JSON file to initialize game layout" do
+    expect(@castle_data.length).to eq(5)
+  end
+
+  it "initializes the game layout JSON with the appropriate castle data" do
+    expect(@castles[0].name).to eq("Old Timey Medieval Castle")
+  end
+
+  it "initializes the game layout JSON with the appropriate amount of castles" do
+    expect(@castles.count).to eq(5)
+  end
+
   it "initializes a castle with proper attributes" do
     expect(@castle).to have_attributes(:name => "Hogwarts")
     expect(@castle).to have_attributes(:rooms => [])
-  end
-
-  it "initializes the game with the appropriate amount of castles" do
-    expect(@castle_data.count).to eq(5)
   end
 
   it "initializes a room with proper attributes" do
@@ -45,7 +53,17 @@ describe Castle do
     expect(@room).to have_attributes(:points => 100)
   end
 
-  it "initializes the game with the appropriate amount of rooms" do
+  it "initializes the game layout JSON with the appropriate amount of rooms" do
     expect(@castles[0].rooms.count).to eq(3)
+  end
+
+  it "initializes the game layout JSON with a monster in a room" do
+    expect(@castles[0].rooms[0].monster).to eq("skeleton warden")
+    expect(@castles[0].rooms[0].win_chance).to eq(95)
+  end
+
+  it "initializes the game layout JSON with a treasure in a room" do
+    expect(@castles[0].rooms[0].treasure).to eq("jail cell key")
+    expect(@castles[0].rooms[0].points).to eq(10)
   end
 end
