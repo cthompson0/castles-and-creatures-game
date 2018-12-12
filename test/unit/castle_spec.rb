@@ -1,20 +1,17 @@
 require 'rspec'
 require 'rspec/core'
 require 'json'
-require_relative 'gamestate'
-require_relative 'castle'
-require_relative 'player'
-require_relative 'room'
+require_relative '../../gamestate.rb'
+require_relative '../../castle.rb'
+require_relative '../../room.rb'
 
-describe GameState do
-  before :each do
-    @player = Player.new
-    @castle = Castle.new("Hogwarts")
-    @room = Room.new("Closet", "Ogre", 95, "Golden Snitch", 100)
-
-    file = File.read('game-layout.json')
+describe Castle do
+  before do
+    file = File.read('../../game-layout.json')
     @castle_data = JSON.parse(file)
+    @castle = Castle.new("Hogwarts")
     @castles = []
+    @room = Room.new("Closet", "Ogre", 95, "Golden Snitch", 100)
     @castle_data.each_with_index do |castle, index|
       @castles << Castle.new(@castle_data[index]["name"])
     end
@@ -31,14 +28,13 @@ describe GameState do
     end
   end
 
-  it "initializes the player with lives and treasure" do
-    expect(@player.lives).to eq(9)
-    expect(@player.treasure).to eq(0)
-  end
-
   it "initializes a castle with proper attributes" do
     expect(@castle).to have_attributes(:name => "Hogwarts")
     expect(@castle).to have_attributes(:rooms => [])
+  end
+
+  it "initializes the game with the appropriate amount of castles" do
+    expect(@castle_data.count).to eq(5)
   end
 
   it "initializes a room with proper attributes" do
@@ -47,10 +43,6 @@ describe GameState do
     expect(@room).to have_attributes(:win_chance => 95)
     expect(@room).to have_attributes(:treasure => "Golden Snitch")
     expect(@room).to have_attributes(:points => 100)
-  end
-
-  it "initializes the game with the appropriate amount of castles" do
-    expect(@castle_data.count).to eq(5)
   end
 
   it "initializes the game with the appropriate amount of rooms" do
