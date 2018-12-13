@@ -10,27 +10,18 @@ class GameState
     load_file
     @castles = []
     @castle_order = 0
-    # Room order var should be in a castle?
-    @room_order = 0
     @player = Player.new
-    # Consider if a constant makes sense here.
     @move_list = %w(Fight Bluff Treasure Lives)
-    # Consider refactoring this to pass the entire castle and room objects from JSON
-    # Then have the classes break down the data themselves
-    @castle_data.each_with_index do |castle, index|
-      @castles << Castle.new(@castle_data[index]["name"])
+    @castle_data.each do |data|
+      @castles << Castle.new(data)
     end
-
     @castle_data.each_with_index do |castle, index|
-      @castle_data[index]["rooms"].each do |room|
-          @castles[index].rooms << Room.new(room["name"],
-                                            room["monster"]["name"],
-                                            room["monster"]["win_chance"],
-                                            room["treasure"]["type"],
-                                            room["treasure"]["points"])
+      castle["rooms"].each do |room|
+        @castles[index].rooms << Room.new(room)
       end
     end
   end
+
 
   def play
     # Should this be here?
@@ -48,7 +39,7 @@ class GameState
   end
 
   def load_file
-    puts "Please enter a file or directory for castle data."
+    puts "Please enter a filename or file path for castle data."
     game_layout = gets.chomp
     file = File.read(game_layout)
     @castle_data = JSON.parse(file)
@@ -70,21 +61,19 @@ class GameState
   end
 
   def room_progression
-    @current_room = @castles[@castle_order].rooms[@room_order].name
+    @current_room = @castles[@castle_order].rooms[@castles[@castle_order].room].name
     puts "You come across a #{@current_room}."
   end
 
   def monster_encounter
-    @current_monster = @castles[@castle_order].rooms[@room_order].monster
+    @current_monster = @castles[@castle_order].rooms[@castles[@castle_order].room].monster
     puts "#{@current_monster} jumps out in front of you!"
   end
 
   def player_move
-    @fighting_chance = @castles[@castle_order].rooms[@room_order].win_chance
-    # Should be a constant. Probably of player class.
-    @bluffing_chance = 30
-    @current_treasure = @castles[@castle_order].rooms[@room_order].treasure
-    @treasure_points = @castles[@castle_order].rooms[@room_order].points
+    @fighting_chance = @castles[@castle_order].rooms[@castles[@castle_order].room].win_chance
+    @current_treasure = @castles[@castle_order].rooms[@castles[@castle_order].room].treasure
+    @treasure_points = @castles[@castle_order].rooms[@castles[@castle_order].room].points
     puts "*" * 25
     puts "What would you like to do?"
     puts @move_list
@@ -135,7 +124,7 @@ class GameState
   end
 
   def win_condition?
-    @castle_order == @castles.count && @room_order == @castles[@castle_order].rooms.count
+    @castle_order == @castles.count && @castles[@castle_order].room == @castles[@castle_order].rooms.count
   end
   
   def fight_successful?
@@ -143,7 +132,7 @@ class GameState
   end
 
   def bluff_successful?
-    rand(100) < @bluffing_chance
+    rand(100) < Player::BLUFFING_CHANCE
   end
 
   def progress_game
@@ -151,10 +140,10 @@ class GameState
     @player.treasure += @treasure_points
     # Could this be if castle.complete?
       if @current_room != @castles[@castle_order].rooms.last.name
-        @room_order += 1
+        @castles[@castle_order].room += 1
       else
         @castle_order += 1
-        @room_order = 0
+        @castles[@castle_order].room = 0
       end
   end
 
@@ -167,7 +156,7 @@ class GameState
     @player.lives = 9
     @player.treasure = 0
     @castle_order = 0
-    @room_order = 0
+    @castles[@castle_order].room = 0
   end
 
   def reset_move_list
