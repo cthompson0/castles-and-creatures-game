@@ -28,6 +28,7 @@ describe Castle do
     end
   end
 
+  # Dont need this here
   it "takes a JSON file to initialize game layout" do
     expect(@castle_data.length).to eq(5)
   end

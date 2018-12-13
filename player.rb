@@ -5,4 +5,9 @@ class Player
     @lives = lives
     @treasure = treasure
   end
+
+  def reset
+    @lives = 9
+    @treasure = 0
+  end
 end

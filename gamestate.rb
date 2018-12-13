@@ -10,9 +10,13 @@ class GameState
     load_file
     @castles = []
     @castle_order = 0
+    # Room order var should be in a castle?
     @room_order = 0
     @player = Player.new
+    # Consider if a constant makes sense here.
     @move_list = %w(Fight Bluff Treasure Lives)
+    # Consider refactoring this to pass the entire castle and room objects from JSON
+    # Then have the classes break down the data themselves
     @castle_data.each_with_index do |castle, index|
       @castles << Castle.new(@castle_data[index]["name"])
     end
@@ -29,7 +33,9 @@ class GameState
   end
 
   def play
+    # Should this be here?
     unless game_over?
+      # Could the classes handle this themselves?
       castle_progression
       room_progression
       monster_encounter
@@ -75,6 +81,7 @@ class GameState
 
   def player_move
     @fighting_chance = @castles[@castle_order].rooms[@room_order].win_chance
+    # Should be a constant. Probably of player class.
     @bluffing_chance = 30
     @current_treasure = @castles[@castle_order].rooms[@room_order].treasure
     @treasure_points = @castles[@castle_order].rooms[@room_order].points
@@ -123,6 +130,7 @@ class GameState
   end
 
   def game_over?
+    # debug statement goes here and check to see why this isnt working
     @player.lives <= 0
   end
 
@@ -141,6 +149,7 @@ class GameState
   def progress_game
     puts "You quickly put it into your pouch. (+#{@treasure_points} pts!)"
     @player.treasure += @treasure_points
+    # Could this be if castle.complete?
       if @current_room != @castles[@castle_order].rooms.last.name
         @room_order += 1
       else
