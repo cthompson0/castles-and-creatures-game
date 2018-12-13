@@ -49,18 +49,23 @@ class GameState
   end
 
   def castle_progression
-    unless game_over?
-      @current_castle = @castles[@castle_order].name
-      puts "You slowly approach a #{@current_castle} and venture inside."
-    else
+    if game_over?
       reset
       play
+    elsif win_condition?
+      puts "You have collected all the treasure!"
+      puts "Your score is #{@player.treasure} points!"
+      reset
+      play
+    else
+      @current_castle = @castles[@castle_order].name 
+      puts "You slowly approach a #{@current_castle} and venture inside."
     end
   end
 
   def room_progression
     @current_room = @castles[@castle_order].rooms[@room_order].name
-    puts "After entering the #{@castles[@castle_order].name}, you come across a #{@current_room}."
+    puts "You come across a #{@current_room}."
   end
 
   def monster_encounter
@@ -85,7 +90,7 @@ class GameState
         puts "You successfully defeated the #{@current_monster}!"
         puts "You find a #{@current_treasure} clutched in a hand of the now lifeless #{@current_monster}."
         reset_move_list
-        progress_and_check_for_win
+        progress_game
       else
         @player.lives -= 1
         puts "The #{@current_monster} has defeated you."
@@ -98,9 +103,9 @@ class GameState
         if bluff_successful?
           puts "You successfully scare the #{@current_monster} and cause them to flee!"
           puts "You find a #{@current_treasure} on the floor where the #{@current_monster} was standing."
-          progress_and_check_for_win
+          progress_game
         else
-          puts "Your attempts to scare the #{@current_monster} have failed!"
+          puts "Your attempts to scare #{@current_monster} have failed!"
           puts "Looks like you will have to fight your way out!"
           @move_list.delete("Bluff")
         end
@@ -108,7 +113,7 @@ class GameState
        puts "You tried that already!"
       end
     when "treasure"
-      puts "You currently have #{@treasure_points} points."
+      puts "You currently have #{@player.treasure} points."
     when "lives"
       puts "You currently have #{@player.lives} lives left."
     else
@@ -133,18 +138,15 @@ class GameState
     rand(100) < @bluffing_chance
   end
 
-  def progress_and_check_for_win
+  def progress_game
     puts "You quickly put it into your pouch. (+#{@treasure_points} pts!)"
     @player.treasure += @treasure_points
-    if @current_room != @castles[@castle_order].rooms.last.name
-      @room_order += 1
-    elsif win_condition?
-      puts "You have collected all the treasure!"
-      puts "Your score is #{@player.treasure} points!"
-    else
-      @castle_order += 1
-      @room_order = 0
-    end
+      if @current_room != @castles[@castle_order].rooms.last.name
+        @room_order += 1
+      else
+        @castle_order += 1
+        @room_order = 0
+      end
   end
 
   def reset
