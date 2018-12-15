@@ -8,4 +8,12 @@ class Room
     @treasure = data["treasure"]["type"]
     @points = data["treasure"]["points"]
   end
+
+  def room_phase
+    puts "You come across a #{@name}."
+  end
+
+  def monster_phase
+    puts "#{@monster} jumps out in front of you!"
+  end
 end

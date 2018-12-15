@@ -15,27 +15,6 @@ class GameState
     @castle_data.each do |data|
       @castles << Castle.new(data)
     end
-    @castle_data.each_with_index do |castle, index|
-      castle["rooms"].each do |room|
-        @castles[index].rooms << Room.new(room)
-      end
-    end
-  end
-
-
-  def play
-    # Should this be here?
-    unless game_over?
-      # Could the classes handle this themselves?
-      castle_progression
-      room_progression
-      monster_encounter
-      player_move
-      play
-    else
-      reset
-      play
-    end
   end
 
   def load_file
@@ -45,35 +24,24 @@ class GameState
     @castle_data = JSON.parse(file)
   end
 
-  def castle_progression
+  def play
+      @castles[@castle_order].castle_phase
+      @castles[@castle_order].rooms[@castles[@castle_order].room].room_phase
+      @castles[@castle_order].rooms[@castles[@castle_order].room].monster_phase
+      player_move
     if game_over?
       reset
       play
-    elsif win_condition?
-      puts "You have collected all the treasure!"
-      puts "Your score is #{@player.treasure} points!"
-      reset
-      play
     else
-      @current_castle = @castles[@castle_order].name 
-      puts "You slowly approach a #{@current_castle} and venture inside."
+      play
     end
-  end
-
-  def room_progression
-    @current_room = @castles[@castle_order].rooms[@castles[@castle_order].room].name
-    puts "You come across a #{@current_room}."
-  end
-
-  def monster_encounter
-    @current_monster = @castles[@castle_order].rooms[@castles[@castle_order].room].monster
-    puts "#{@current_monster} jumps out in front of you!"
   end
 
   def player_move
     @fighting_chance = @castles[@castle_order].rooms[@castles[@castle_order].room].win_chance
     @current_treasure = @castles[@castle_order].rooms[@castles[@castle_order].room].treasure
     @treasure_points = @castles[@castle_order].rooms[@castles[@castle_order].room].points
+    @current_monster = @castles[@castle_order].rooms[@castles[@castle_order].room].monster
     puts "*" * 25
     puts "What would you like to do?"
     puts @move_list
@@ -119,12 +87,17 @@ class GameState
   end
 
   def game_over?
-    # debug statement goes here and check to see why this isnt working
     @player.lives <= 0
   end
 
   def win_condition?
-    @castle_order == @castles.count && @castles[@castle_order].room == @castles[@castle_order].rooms.count
+    @castles.count - 1 == @castle_order && @castles[@castle_order].complete?
+  end
+
+  def win
+    puts "You have successfully collected all the treasure!"
+    reset
+    play
   end
   
   def fight_successful?
@@ -138,13 +111,17 @@ class GameState
   def progress_game
     puts "You quickly put it into your pouch. (+#{@treasure_points} pts!)"
     @player.treasure += @treasure_points
-    # Could this be if castle.complete?
-      if @current_room != @castles[@castle_order].rooms.last.name
-        @castles[@castle_order].room += 1
-      else
+
+    if @castles[@castle_order].complete?
+      unless win_condition?
         @castle_order += 1
-        @castles[@castle_order].room = 0
+        @castles[@castle_order].room_reset
+      else
+        win
       end
+    else
+      @castles[@castle_order].room_progression
+    end
   end
 
   def reset
@@ -153,10 +130,9 @@ class GameState
     puts "GAME OVER!"
     puts "Starting a new game.."
     puts "*" * 25
-    @player.lives = 9
-    @player.treasure = 0
+    @player.reset
     @castle_order = 0
-    @castles[@castle_order].room = 0
+    @castles[@castle_order].room_reset
   end
 
   def reset_move_list
