@@ -45,7 +45,7 @@ class GameState
     puts "What would you like to do?"
     puts @move_list
     puts "*" * 25
-    @selected_move = gets.chomp
+    @selected_move = STDIN.gets.chomp
 
     case @selected_move.downcase
     when "fight"
@@ -59,7 +59,9 @@ class GameState
         puts "The #{@current_monster} has defeated you."
         puts "You have #{@player.lives} lives left."
         puts "*" * 25
-        player_move
+        unless game_over?
+          player_move
+        end
       end
     when "bluff"
       if @move_list.include?("Bluff")
