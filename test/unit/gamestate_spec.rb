@@ -6,7 +6,6 @@ require_relative '../../player.rb'
 
 describe GameState do
   let(:gamestate) { GameState.new }
-  let(:player) { Player.new }
   let(:input) { "../../game-layout.json\n" }
 
   before do
