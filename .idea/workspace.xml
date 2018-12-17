@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e2aca806-8f10-417e-afef-f4e71094c7cf" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gamestate.rb" beforeDir="false" afterPath="$PROJECT_DIR$/gamestate.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/unit/gamestate_spec.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/unit/gamestate_spec.rb" beforeDir="false" afterPath="$PROJECT_DIR$/test/unit/gamestate_spec.rb" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -29,10 +28,11 @@
     <SUITE FILE_PATH="coverage/castles_and_creatures@Player_initializes_the_player_with_lives_and_treasure__castles_and_creatures.rcov" NAME="Player initializes the player with lives and treasure: castles_and_creatures Coverage Results" MODIFIED="1544837871192" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/unit" MODULE_NAME="castles_and_creatures" />
     <SUITE FILE_PATH="coverage/castles_and_creatures@Run_spec__gamestate_spec___castles_and_creatures.rcov" NAME="Run spec 'gamestate_spec': castles_and_creatures Coverage Results" MODIFIED="1545030993362" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/unit" MODULE_NAME="castles_and_creatures" />
     <SUITE FILE_PATH="coverage/castles_and_creatures@Run_spec__castles_and_creatures_test_spec___castles_and_creatures.rcov" NAME="Run spec 'castles_and_creatures_test_spec': castles_and_creatures Coverage Results" MODIFIED="1544572810129" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="castles_and_creatures" />
+    <SUITE FILE_PATH="coverage/castles_and_creatures@GameState_initializes_the_game_with_JSON_data_after_receiving_input__castles_and_creatures.rcov" NAME="GameState initializes the game with JSON data after receiving input: castles_and_creatures Coverage Results" MODIFIED="1545068983345" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/unit" MODULE_NAME="castles_and_creatures" />
     <SUITE FILE_PATH="coverage/castles_and_creatures@Run_test__castles_and_creatures_test___castles_and_creatures.rcov" NAME="Run test 'castles_and_creatures_test': castles_and_creatures Coverage Results" MODIFIED="1542761620540" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="castles_and_creatures" />
     <SUITE FILE_PATH="coverage/castles_and_creatures@gamestate.rcov" NAME="gamestate Coverage Results" MODIFIED="1544399902856" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="castles_and_creatures" />
     <SUITE FILE_PATH="coverage/castles_and_creatures@Player_initializes_a_castle_with_a_rooms_array__castles_and_creatures.rcov" NAME="Player initializes a castle with a rooms array: castles_and_creatures Coverage Results" MODIFIED="1544554956301" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="castles_and_creatures" />
-    <SUITE FILE_PATH="coverage/castles_and_creatures@GameState_initializes_the_game_with_JSON_data__castles_and_creatures.rcov" NAME="GameState initializes the game with JSON data: castles_and_creatures Coverage Results" MODIFIED="1545031191287" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/unit" MODULE_NAME="castles_and_creatures" />
+    <SUITE FILE_PATH="coverage/castles_and_creatures@GameState_initializes_the_game_with_JSON_data__castles_and_creatures.rcov" NAME="GameState initializes the game with JSON data: castles_and_creatures Coverage Results" MODIFIED="1545068067138" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/unit" MODULE_NAME="castles_and_creatures" />
     <SUITE FILE_PATH="coverage/castles_and_creatures@GameState__castles_and_creatures.rcov" NAME="GameState: castles_and_creatures Coverage Results" MODIFIED="1545031096811" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/unit" MODULE_NAME="castles_and_creatures" />
     <SUITE FILE_PATH="coverage/castles_and_creatures@Castle_gives_the_player_the_correct_output_when_searching_a_castle__castles_and_creatures.rcov" NAME="Castle gives the player the correct output when searching a castle: castles_and_creatures Coverage Results" MODIFIED="1544841258748" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/unit" MODULE_NAME="castles_and_creatures" />
     <SUITE FILE_PATH="coverage/castles_and_creatures@Player_expects_game_to_end_with_0_lives__castles_and_creatures.rcov" NAME="Player expects game to end with 0 lives: castles_and_creatures Coverage Results" MODIFIED="1544639458066" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/unit" MODULE_NAME="castles_and_creatures" />
@@ -74,14 +74,14 @@
           <entry key="Gemfile" value="2" />
           <entry key="json" value="5" />
           <entry key="md" value="1" />
-          <entry key="rb" value="18" />
+          <entry key="rb" value="19" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="JSON" value="5" />
           <entry key="Markdown" value="1" />
-          <entry key="Ruby" value="20" />
+          <entry key="Ruby" value="21" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -89,14 +89,14 @@
           <entry key="Gemfile" value="41" />
           <entry key="json" value="9" />
           <entry key="md" value="1649" />
-          <entry key="rb" value="25387" />
+          <entry key="rb" value="25817" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="JSON" value="9" />
           <entry key="Markdown" value="1649" />
-          <entry key="Ruby" value="25428" />
+          <entry key="Ruby" value="25858" />
         </counts>
       </usages-collector>
     </session>
@@ -150,8 +150,17 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/gamestate.rb">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="474">
-                  <caret line="135" lean-forward="true" selection-start-line="135" selection-end-line="136" selection-end-column="21" />
+                <state relative-caret-position="255">
+                  <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$APPLICATION_HOME_DIR$/rubystubs25/kernel.rb">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="39292">
+                  <caret line="2765" column="8" selection-start-line="2765" selection-start-column="8" selection-end-line="2765" selection-end-column="8" />
                 </state>
               </provider>
             </entry>
@@ -190,8 +199,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/test/unit/player_spec.rb">
               <provider selected="true" editor-type-id="text-editor">
-                <state>
-                  <caret selection-end-line="2" selection-end-column="37" />
+                <state relative-caret-position="105">
+                  <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
                 </state>
               </provider>
             </entry>
@@ -199,8 +208,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/test/unit/gamestate_spec.rb">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="135">
-                  <caret line="9" column="4" lean-forward="true" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
+                <state relative-caret-position="180">
+                  <caret line="12" column="5" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
                 </state>
               </provider>
             </entry>
@@ -231,6 +240,7 @@
       <find>puts</find>
       <find>@bluffing_chance</find>
       <find>Player::</find>
+      <find>c</find>
     </findStrings>
     <replaceStrings>
       <replace>castle_progression</replace>
@@ -273,8 +283,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-248" />
-    <option name="y" value="101" />
+    <option name="x" value="224" />
+    <option name="y" value="110" />
     <option name="width" value="1466" />
     <option name="height" value="806" />
   </component>
@@ -446,7 +456,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="RSpec.GameState initializes the game with JSON data: castles_and_creatures">
+  <component name="RunManager" selected="RSpec.GameState initializes the game with JSON data after receiving input: castles_and_creatures">
     <configuration name="GameState expects the moves list to be reset: castles_and_creatures" type="RSpecRunConfigurationType" factoryName="RSpec" temporary="true">
       <predefined_log_file id="RUBY_RSPEC" enabled="true" />
       <module name="castles_and_creatures" />
@@ -480,7 +490,7 @@
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="FULL_BACKTRACE" VALUE="false" />
       <method v="2" />
     </configuration>
-    <configuration name="GameState expects: castles_and_creatures" type="RSpecRunConfigurationType" factoryName="RSpec" temporary="true">
+    <configuration name="GameState initializes the game with JSON data after receiving input: castles_and_creatures" type="RSpecRunConfigurationType" factoryName="RSpec" temporary="true">
       <predefined_log_file id="RUBY_RSPEC" enabled="true" />
       <module name="castles_and_creatures" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="" />
@@ -502,7 +512,7 @@
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="$MODULE_DIR$/test/unit/gamestate_spec.rb" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_RUNNER_PATH" VALUE="" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="'**/*_spec.rb'" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_EXAMPLE_NAME" VALUE="GameState expects" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_EXAMPLE_NAME" VALUE="GameState initializes the game with JSON data after receiving input" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="TEST_SCRIPT" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_ARGS" VALUE="" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="RUNNER_VERSION" VALUE="" />
@@ -613,19 +623,19 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="RSpec.GameState expects: castles_and_creatures" />
       <item itemvalue="RSpec.GameState expects the moves list to be reset: castles_and_creatures" />
       <item itemvalue="RSpec.GameState: castles_and_creatures" />
       <item itemvalue="RSpec.Run spec 'gamestate_spec': castles_and_creatures" />
       <item itemvalue="RSpec.GameState initializes the game with JSON data: castles_and_creatures" />
+      <item itemvalue="RSpec.GameState initializes the game with JSON data after receiving input: castles_and_creatures" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="RSpec.GameState initializes the game with JSON data after receiving input: castles_and_creatures" />
         <item itemvalue="RSpec.GameState initializes the game with JSON data: castles_and_creatures" />
         <item itemvalue="RSpec.GameState: castles_and_creatures" />
         <item itemvalue="RSpec.Run spec 'gamestate_spec': castles_and_creatures" />
         <item itemvalue="RSpec.GameState expects the moves list to be reset: castles_and_creatures" />
-        <item itemvalue="RSpec.GameState expects: castles_and_creatures" />
       </list>
     </recent_temporary>
   </component>
@@ -641,55 +651,55 @@
       <option name="presentableId" value="Default" />
       <updated>1542751627646</updated>
       <workItem from="1542751629602" duration="17848000" />
-      <workItem from="1543617179067" duration="102301000" />
+      <workItem from="1543617179067" duration="105257000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="GameState__castles_and_creatures - 2018.12.16 at 23h 16m 22s.xml">
-      <configuration name="GameState: castles_and_creatures" configurationId="RSpecRunConfigurationType" />
-    </history-entry>
-    <history-entry file="Run_spec_'gamestate_spec'__castles_and_creatures - 2018.12.16 at 23h 16m 34s.xml">
-      <configuration name="Run spec 'gamestate_spec': castles_and_creatures" configurationId="RSpecRunConfigurationType" />
-    </history-entry>
-    <history-entry file="GameState_initializes_the_game_with_JSON_data__castles_and_creatures - 2018.12.16 at 23h 17m 17s.xml">
+    <history-entry file="GameState_initializes_the_game_with_JSON_data__castles_and_creatures - 2018.12.17 at 09h 25m 53s.xml">
       <configuration name="GameState initializes the game with JSON data: castles_and_creatures" configurationId="RSpecRunConfigurationType" />
     </history-entry>
-    <history-entry file="GameState_initializes_the_game_with_JSON_data__castles_and_creatures - 2018.12.16 at 23h 17m 29s.xml">
+    <history-entry file="GameState_initializes_the_game_with_JSON_data__castles_and_creatures - 2018.12.17 at 09h 26m 20s.xml">
       <configuration name="GameState initializes the game with JSON data: castles_and_creatures" configurationId="RSpecRunConfigurationType" />
     </history-entry>
-    <history-entry file="GameState__castles_and_creatures - 2018.12.16 at 23h 18m 17s.xml">
-      <configuration name="GameState: castles_and_creatures" configurationId="RSpecRunConfigurationType" />
-    </history-entry>
-    <history-entry file="GameState_initializes_the_game_with_JSON_data__castles_and_creatures - 2018.12.16 at 23h 18m 21s.xml">
+    <history-entry file="GameState_initializes_the_game_with_JSON_data__castles_and_creatures - 2018.12.17 at 09h 26m 43s.xml">
       <configuration name="GameState initializes the game with JSON data: castles_and_creatures" configurationId="RSpecRunConfigurationType" />
     </history-entry>
-    <history-entry file="GameState_initializes_the_game_with_JSON_data__castles_and_creatures - 2018.12.16 at 23h 18m 48s.xml">
+    <history-entry file="GameState_initializes_the_game_with_JSON_data__castles_and_creatures - 2018.12.17 at 09h 26m 52s.xml">
       <configuration name="GameState initializes the game with JSON data: castles_and_creatures" configurationId="RSpecRunConfigurationType" />
     </history-entry>
-    <history-entry file="GameState_initializes_the_game_with_JSON_data__castles_and_creatures - 2018.12.16 at 23h 19m 14s.xml">
+    <history-entry file="GameState_initializes_the_game_with_JSON_data__castles_and_creatures - 2018.12.17 at 09h 27m 27s.xml">
       <configuration name="GameState initializes the game with JSON data: castles_and_creatures" configurationId="RSpecRunConfigurationType" />
     </history-entry>
-    <history-entry file="GameState_initializes_the_game_with_JSON_data__castles_and_creatures - 2018.12.16 at 23h 19m 38s.xml">
+    <history-entry file="GameState_initializes_the_game_with_JSON_data__castles_and_creatures - 2018.12.17 at 09h 28m 02s.xml">
       <configuration name="GameState initializes the game with JSON data: castles_and_creatures" configurationId="RSpecRunConfigurationType" />
     </history-entry>
-    <history-entry file="GameState_initializes_the_game_with_JSON_data__castles_and_creatures - 2018.12.16 at 23h 19m 52s.xml">
+    <history-entry file="GameState_initializes_the_game_with_JSON_data__castles_and_creatures - 2018.12.17 at 09h 34m 27s.xml">
       <configuration name="GameState initializes the game with JSON data: castles_and_creatures" configurationId="RSpecRunConfigurationType" />
+    </history-entry>
+    <history-entry file="GameState_initializes_the_game_with_JSON_data_after_receiving_input__castles_and_creatures - 2018.12.17 at 09h 35m 03s.xml">
+      <configuration name="GameState initializes the game with JSON data after receiving input: castles_and_creatures" configurationId="RSpecRunConfigurationType" />
+    </history-entry>
+    <history-entry file="GameState_initializes_the_game_with_JSON_data_after_receiving_input__castles_and_creatures - 2018.12.17 at 09h 47m 06s.xml">
+      <configuration name="GameState initializes the game with JSON data after receiving input: castles_and_creatures" configurationId="RSpecRunConfigurationType" />
+    </history-entry>
+    <history-entry file="GameState_initializes_the_game_with_JSON_data_after_receiving_input__castles_and_creatures - 2018.12.17 at 09h 49m 43s.xml">
+      <configuration name="GameState initializes the game with JSON data after receiving input: castles_and_creatures" configurationId="RSpecRunConfigurationType" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="120149000" />
+    <option name="totallyTimeSpent" value="123105000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-248" y="101" width="1466" height="806" extended-state="0" />
+    <frame x="224" y="110" width="1466" height="806" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.74747473" visible="true" weight="0.24648876" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.74747473" weight="0.24648876" />
       <window_info id="Structure" order="1" sideWeight="0.25252524" side_tool="true" weight="0.19019316" />
       <window_info id="Favorites" order="2" sideWeight="0.5019608" side_tool="true" weight="0.18796434" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49324325" weight="0.3285151" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.54206604" visible="true" weight="0.26086956" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.54206604" visible="true" weight="0.4173913" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -774,13 +784,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/game-layout.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="19" lean-forward="true" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/room.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -795,13 +798,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/unit/player_spec.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="2" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/unit/castle_spec.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -809,17 +805,38 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/game-layout.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="19" lean-forward="true" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/rubystubs25/kernel.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="39292">
+          <caret line="2765" column="8" selection-start-line="2765" selection-start-column="8" selection-end-line="2765" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/unit/player_spec.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/gamestate.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="474">
-          <caret line="135" lean-forward="true" selection-start-line="135" selection-end-line="136" selection-end-column="21" />
+        <state relative-caret-position="255">
+          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/unit/gamestate_spec.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="4" lean-forward="true" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
+        <state relative-caret-position="180">
+          <caret line="12" column="5" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
         </state>
       </provider>
     </entry>

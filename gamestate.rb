@@ -18,7 +18,7 @@ class GameState
 
   def load_file
     puts "Please enter a filename or file path for castle data."
-    game_layout = gets.chomp
+    game_layout = STDIN.gets.chomp
     file = File.read(game_layout)
     @castle_data = JSON.parse(file)
   end
