@@ -9,6 +9,5 @@ describe GameState do
   it "initializes the game with JSON data after receiving input" do
     allow(STDIN).to receive(:gets).and_return(input)
     gamestate.load_file
-    puts GameState.instance_variable_get(:@castle_order)
   end
 end
