@@ -4,7 +4,6 @@ require_relative 'room'
 require_relative 'castle'
 
 class GameState
-  attr_accessor :player
 
   def initialize
     load_file
