@@ -3,10 +3,10 @@ require_relative 'player'
 require_relative 'room'
 require_relative 'castle'
 
-class GameState
+class Gamestate
 
-  def initialize
-    load_file
+  def initialize(castle_data)
+    @castle_data = castle_data
     @castles = []
     @castle_order = 0
     @player = Player.new
@@ -14,6 +14,7 @@ class GameState
     @castle_data.each do |data|
       @castles << Castle.new(data)
     end
+    play
   end
 
   def load_file
@@ -23,33 +24,44 @@ class GameState
     @castle_data = JSON.parse(file)
   end
 
+  def current_castle
+    @castles[@castle_order]
+  end
+
   def play
-      @castles[@castle_order].castle_phase
-      @castles[@castle_order].rooms[@castles[@castle_order].room].room_phase
-      @castles[@castle_order].rooms[@castles[@castle_order].room].monster_phase
+      current_castle.phasing
       player_move
     if game_over?
-      reset
-      play
+      game_over
+      puts "Would you like to play again (Y/N)?"
+      @play_again = gets.chomp.downcase
+      case @play_again
+      when "Y"
+        reset
+        play
+      when "N"
+        puts "Thanks for playing!"
+      else
+        puts "Please select Y or N to continue."
+      end
     else
       play
     end
   end
 
   def player_move
-    @fighting_chance = @castles[@castle_order].rooms[@castles[@castle_order].room].win_chance
-    @current_treasure = @castles[@castle_order].rooms[@castles[@castle_order].room].treasure
-    @treasure_points = @castles[@castle_order].rooms[@castles[@castle_order].room].points
-    @current_monster = @castles[@castle_order].rooms[@castles[@castle_order].room].monster
+    @current_treasure = current_castle.current_room.treasure
+    @treasure_points = current_castle.current_room.points
+    @current_monster = current_castle.current_room.monster
     puts "*" * 25
     puts "What would you like to do?"
     puts @move_list
     puts "*" * 25
-    @selected_move = STDIN.gets.chomp
+    @selected_move = Kernel.gets.chomp
 
     case @selected_move.downcase
     when "fight"
-      if fight_successful?
+      if current_castle.current_room.fight_successful?
         puts "You successfully defeated the #{@current_monster}!"
         puts "You find a #{@current_treasure} clutched in a hand of the now lifeless #{@current_monster}."
         reset_move_list
@@ -65,7 +77,7 @@ class GameState
       end
     when "bluff"
       if @move_list.include?("Bluff")
-        if bluff_successful?
+        if @player.bluff_successful?
           puts "You successfully scare the #{@current_monster} and cause them to flee!"
           puts "You find a #{@current_treasure} on the floor where the #{@current_monster} was standing."
           progress_game
@@ -100,14 +112,6 @@ class GameState
     reset
     play
   end
-  
-  def fight_successful?
-    rand(100) < @fighting_chance
-  end
-
-  def bluff_successful?
-    rand(100) < Player::BLUFFING_CHANCE
-  end
 
   def progress_game
     puts "You quickly put it into your pouch. (+#{@treasure_points} pts!)"
@@ -125,10 +129,14 @@ class GameState
     end
   end
 
-  def reset
-    puts "*" * 25
+  def game_over
     puts "Your score: #{@player.treasure}!"
     puts "GAME OVER!"
+    puts "*" * 25
+  end
+
+  def reset
+    puts "*" * 25
     puts "Starting a new game.."
     puts "*" * 25
     @player.reset

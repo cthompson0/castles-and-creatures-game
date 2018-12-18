@@ -16,4 +16,8 @@ class Room
   def monster_phase
     puts "#{@monster} jumps out in front of you!"
   end
+
+  def fight_successful?
+    rand(100) < @win_chance
+  end
 end

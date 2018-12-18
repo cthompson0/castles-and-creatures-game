@@ -11,4 +11,8 @@ class Player
     @lives = 9
     @treasure = 0
   end
+
+  def bluff_successful?
+    rand(100) < BLUFFING_CHANCE
+  end
 end

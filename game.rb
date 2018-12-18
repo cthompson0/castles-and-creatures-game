@@ -1,4 +1,3 @@
-require_relative 'gamestate'
+require_relative 'game_interface'
 
-@new_game = GameState.new
-@new_game.play
+GameInterface.new

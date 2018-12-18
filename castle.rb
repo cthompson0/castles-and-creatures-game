@@ -12,6 +12,16 @@ class Castle
     end
   end
 
+  def current_room
+    @rooms[@room]
+  end
+
+  def phasing
+    castle_phase
+    current_room.room_phase
+    current_room.monster_phase
+  end
+
   def room_progression
     @room += 1
   end
