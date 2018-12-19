@@ -10,7 +10,6 @@ class Gamestate
     @castles = []
     @castle_order = 0
     @player = Player.new
-    @move_list = %w(Fight Bluff Treasure Lives)
     @castle_data.each do |data|
       @castles << Castle.new(data)
     end
@@ -34,8 +33,8 @@ class Gamestate
   def play
       current_castle.phasing
       player_move
-    if game_over?
-      game_over
+    if @player.game_over?
+      @player.game_over
       puts "Would you like to play again (Y/N)?"
       @play_again = gets.chomp.downcase
       case @play_again
@@ -53,42 +52,38 @@ class Gamestate
   end
 
   def player_move
-    # Refactor this into player?
-    puts "*" * 25
-    puts "What would you like to do?"
-    puts @move_list
-    puts "*" * 25
+    @player.move_text
     @selected_move = Kernel.gets.chomp
 
     case @selected_move.downcase
     when "fight"
       if current_room.fight_successful?
         current_room.monster_fight_win_text
-        reset_move_list
+        @player.reset_move_list
         @player.add_treasure(current_room.points)
         # if they_won_the_game
         unless win_condition?
           # change these method names
-          current_castle.progress
+          current_castle.progress_to_next_room
           next_castle_if_complete
         end
       else
         @player.lives -= 1
         current_room.monster_fight_fail_text
         @player.lives_check
-        unless game_over?
+        unless @player.game_over?
           player_move
         end
       end
     when "bluff"
-      if @move_list.include?("Bluff")
+      if @player.move_list.include?("Bluff")
         if @player.bluff_successful?
           current_room.monster_bluff_win_text
-          current_castle.progress
+          current_castle.progress_to_next_room
           next_castle_if_complete
         else
           current_room.monster_bluff_fail_text
-          @move_list.delete("Bluff")
+          @player.move_list.delete("Bluff")
         end
       else
        puts "You tried that already!"
@@ -103,10 +98,6 @@ class Gamestate
     end
   end
 
-  def game_over?
-    @player.lives <= 0
-  end
-
   def win_condition?
     @castles.count - 1 == @castle_order && current_castle.complete?
   end
@@ -117,12 +108,6 @@ class Gamestate
     play
   end
 
-  def game_over
-    puts "Your score: #{@player.treasure}!"
-    puts "GAME OVER!"
-    puts "*" * 25
-  end
-
   def reset
     puts "*" * 25
     puts "Starting a new game.."
@@ -130,9 +115,5 @@ class Gamestate
     @player.reset
     @castle_order = 0
     current_castle.room_reset
-  end
-
-  def reset_move_list
-    @move_list = %w(Fight Bluff Treasure Lives)
   end
 end

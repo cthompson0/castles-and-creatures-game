@@ -19,25 +19,25 @@ describe Castle do
   end
 
   it "progresses through rooms of a castle" do
-    castle.room_progression
+    castle.progress_to_next_room
     expect(castle.room).to eq(1)
   end
 
   it "resets the room progression back to zero" do
-    castle.room_progression
+    castle.progress_to_next_room
     expect(castle.room).to eq(1)
     castle.room_reset
     expect(castle.room).to eq(0)
   end
 
   it "returns true when a castles rooms are all explored" do
-    castle.room = castle.rooms.count - 1
+    castle.room_number = castle.rooms.count
     expect(castle.complete?).to eq(true)
   end
 
   it "gives the player the correct output when searching a castle" do
     expect { castle.castle_phase }.to output("You cautiously approach a Old Timey Medieval Castle and venture inside.\n").to_stdout
-    castle.room = castle.rooms.count - 1
+    castle.room_number += 1
     expect { castle.castle_phase }.to output("You continue searching the Old Timey Medieval Castle.\n").to_stdout
   end
 end

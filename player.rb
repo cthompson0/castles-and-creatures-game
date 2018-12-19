@@ -1,5 +1,5 @@
 class Player
-  attr_accessor :lives, :treasure
+  attr_accessor :lives, :treasure, :move_list
   BLUFFING_CHANCE = 30
   DEFAULT_LIVES = 9
   DEFAULT_TREASURE = 0
@@ -7,6 +7,7 @@ class Player
   def initialize(lives=DEFAULT_LIVES, treasure=DEFAULT_TREASURE)
     @lives = lives
     @treasure = treasure
+    @move_list = %w(Fight Bluff Treasure Lives)
   end
 
   def reset
@@ -18,10 +19,6 @@ class Player
     rand(100) < BLUFFING_CHANCE
   end
 
-  def fight_successful?(chance)
-    rand(100) < chance
-  end
-
   def add_treasure(treasure)
     @treasure += treasure
   end
@@ -31,6 +28,31 @@ class Player
   end
 
   def treasure_check
-    puts "You currently have #{@player.treasure} points."
+    puts "You currently have #{@treasure} points."
+  end
+
+  def remove_bluff
+    @move_list.delete("Bluff")
+  end
+
+  def reset_move_list
+    @move_list = %w(Fight Bluff Treasure Lives)
+  end
+
+  def move_text
+    puts "*" * 25
+    puts "What would you like to do?"
+    puts @move_list
+    puts "*" * 25
+  end
+
+  def game_over
+    puts "Your score: #{@treasure}!"
+    puts "GAME OVER!"
+    puts "*" * 25
+  end
+
+  def game_over?
+    @lives <= 0
   end
 end
