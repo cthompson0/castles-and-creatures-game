@@ -17,15 +17,18 @@ class Gamestate
     play
   end
 
-  def load_file
-    puts "Please enter a filename or file path for castle data."
-    game_layout = STDIN.gets.chomp
-    file = File.read(game_layout)
-    @castle_data = JSON.parse(file)
-  end
-
   def current_castle
     @castles[@castle_order]
+  end
+
+  def current_room
+    current_castle.current_room
+  end
+
+  def next_castle_if_complete
+    if current_castle.complete?
+      @castle_order += 1
+    end
   end
 
   def play
@@ -50,9 +53,7 @@ class Gamestate
   end
 
   def player_move
-    @current_treasure = current_castle.current_room.treasure
-    @treasure_points = current_castle.current_room.points
-    @current_monster = current_castle.current_room.monster
+    # Refactor this into player?
     puts "*" * 25
     puts "What would you like to do?"
     puts @move_list
@@ -61,16 +62,20 @@ class Gamestate
 
     case @selected_move.downcase
     when "fight"
-      if current_castle.current_room.fight_successful?
-        puts "You successfully defeated the #{@current_monster}!"
-        puts "You find a #{@current_treasure} clutched in a hand of the now lifeless #{@current_monster}."
+      if current_room.fight_successful?
+        current_room.monster_fight_win_text
         reset_move_list
-        progress_game
+        @player.add_treasure(current_room.points)
+        # if they_won_the_game
+        unless win_condition?
+          # change these method names
+          current_castle.progress
+          next_castle_if_complete
+        end
       else
         @player.lives -= 1
-        puts "The #{@current_monster} has defeated you."
-        puts "You have #{@player.lives} lives left."
-        puts "*" * 25
+        current_room.monster_fight_fail_text
+        @player.lives_check
         unless game_over?
           player_move
         end
@@ -78,21 +83,20 @@ class Gamestate
     when "bluff"
       if @move_list.include?("Bluff")
         if @player.bluff_successful?
-          puts "You successfully scare the #{@current_monster} and cause them to flee!"
-          puts "You find a #{@current_treasure} on the floor where the #{@current_monster} was standing."
-          progress_game
+          current_room.monster_bluff_win_text
+          current_castle.progress
+          next_castle_if_complete
         else
-          puts "Your attempts to scare #{@current_monster} have failed!"
-          puts "Looks like you will have to fight your way out!"
+          current_room.monster_bluff_fail_text
           @move_list.delete("Bluff")
         end
       else
        puts "You tried that already!"
       end
     when "treasure"
-      puts "You currently have #{@player.treasure} points."
+      @player.treasure_check
     when "lives"
-      puts "You currently have #{@player.lives} lives left."
+      @player.lives_check
     else
       puts "ERROR: Please select a valid action!"
       player_move
@@ -104,29 +108,13 @@ class Gamestate
   end
 
   def win_condition?
-    @castles.count - 1 == @castle_order && @castles[@castle_order].complete?
+    @castles.count - 1 == @castle_order && current_castle.complete?
   end
 
   def win
     puts "You have successfully collected all the treasure!"
     reset
     play
-  end
-
-  def progress_game
-    puts "You quickly put it into your pouch. (+#{@treasure_points} pts!)"
-    @player.treasure += @treasure_points
-
-    if @castles[@castle_order].complete?
-      unless win_condition?
-        @castle_order += 1
-        @castles[@castle_order].room_reset
-      else
-        win
-      end
-    else
-      @castles[@castle_order].room_progression
-    end
   end
 
   def game_over
@@ -141,7 +129,7 @@ class Gamestate
     puts "*" * 25
     @player.reset
     @castle_order = 0
-    @castles[@castle_order].room_reset
+    current_castle.room_reset
   end
 
   def reset_move_list

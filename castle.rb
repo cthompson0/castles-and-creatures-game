@@ -3,9 +3,10 @@ require_relative 'room'
 class Castle
   attr_accessor :name, :rooms, :room
 
-  def initialize(data)
+  def initialize(data, rooms = [])
     @name = data["name"]
-    @rooms = []
+    @rooms = rooms
+    # Think about renaming this to room_number
     @room = 0
     data["rooms"].each do |room|
       @rooms << Room.new(room)
@@ -22,7 +23,16 @@ class Castle
     current_room.monster_phase
   end
 
-  def room_progression
+  def progress
+    puts "You quickly put it into your pouch. (+#{current_room.points} pts!)"
+    if complete?
+      room_reset
+    else
+      next_room
+    end
+  end
+
+  def next_room
     @room += 1
   end
 
@@ -31,7 +41,7 @@ class Castle
   end
 
   def complete?
-    @room == @rooms.count - 1
+    @room == @rooms.count
   end
 
   def castle_phase
