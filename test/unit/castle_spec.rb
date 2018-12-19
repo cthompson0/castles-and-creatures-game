@@ -18,16 +18,28 @@ describe Castle do
     expect(castle.rooms[0]).to have_attributes(:name => "dungeon")
   end
 
+  it "returns the current room data within the castle" do
+    expect(castle.current_room.name).to eq("dungeon")
+    expect(castle.current_room.monster).to eq("skeleton warden")
+    expect(castle.current_room.win_chance).to eq(95)
+    expect(castle.current_room.points).to eq(10)
+    expect(castle.current_room.treasure).to eq("jail cell key")
+  end
+
+  it "initiates the proper game phases within the castle" do
+    allow(castle.phasing).to receive(:castle_phase).ordered
+  end
+
   it "progresses through rooms of a castle" do
     castle.progress_to_next_room
-    expect(castle.room).to eq(1)
+    expect(castle.room_number).to eq(1)
   end
 
   it "resets the room progression back to zero" do
     castle.progress_to_next_room
-    expect(castle.room).to eq(1)
+    expect(castle.room_number).to eq(1)
     castle.room_reset
-    expect(castle.room).to eq(0)
+    expect(castle.room_number).to eq(0)
   end
 
   it "returns true when a castles rooms are all explored" do
