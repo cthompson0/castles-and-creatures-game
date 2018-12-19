@@ -56,6 +56,16 @@ Once inside the game directory run:
 
 In order to install all the necessary dependencies.
 
+### Running tests
+RSpec will be required for running these tests.
+By typing
+> rspec (file_spec.rb)
+
+You can run the desired test file. Alternatively,
+> rspec test/unit/
+
+Will run all the test files in the selected folder.
+
 ### Running the Game
 By typing
 > ruby game.rb
