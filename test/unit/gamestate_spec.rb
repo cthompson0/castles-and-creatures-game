@@ -3,73 +3,47 @@ require 'rspec/core'
 require_relative '../../gamestate.rb'
 
 describe Gamestate do
-  let(:gamestate) { Gamestate.new }
-  let(:input) { "../../game-layout.json\n" }
-
-  before do
-    allow(STDIN).to receive(:gets).and_return(input)
+  let(:castle_data) do [{"name"=>"Old Timey Medieval Castle",
+                         "rooms"=>[{
+                                   "name"=>"dungeon",
+                                       "monster"=>{"name"=>"skeleton warden", "win_chance"=>95},
+                                       "treasure"=>{"type"=>"jail cell key", "points"=>10}},
+                                   {"name"=>"the endless staircase",
+                                      "monster"=>{"name"=>"cursed princess", "win_chance"=>80},
+                                      "treasure"=>{"type"=>"a ruby necklace", "points"=>25}},
+                                   {"name"=>"throne room",
+                                      "monster"=>{"name"=>"the evil dragon", "win_chance"=>70},
+                                      "treasure"=>{"type"=>"the dragon's hoard", "points"=>100}}]}]
   end
+  let(:gamestate) { Gamestate.new(castle_data) }
 
   it "initializes the game with a JSON file and proper attributes" do
-    gamestate.load_file
-    expect(gamestate.instance_variable_get(:@castles)).not_to be_empty
     expect(gamestate.instance_variable_get(:@castle_order)).to eq(0)
-    expect(gamestate.instance_variable_get(:@player)).to be_an_instance_of(Player)
-    expect(gamestate.instance_variable_get(:@move_list)).to eq(["Fight", "Bluff", "Treasure", "Lives"])
+    expect(gamestate.instance_variable_get(:@castles)).to_not be_nil
   end
 
-  it "accepts a chosen player move until game over" do
-    allow(Kernel).to receive(:gets).and_return("fight")
-    # allow(Kernel).to receive(:play_again).and_return("n")
-    gamestate.play
+  it "keeps track of and returns the current castle data" do
+    expect(gamestate.current_castle).to_not be_nil
+    expect(gamestate.current_castle.name).to eq("Old Timey Medieval Castle")
   end
 
-  it "sequences the game phases in proper order" do
-
+  it "keeps track of data for current room of current castle" do
+    expect(gamestate.current_room).to_not be_nil
+    expect(gamestate.current_room.name).to eq("dungeon")
   end
 
-  it "evaluates a game over properly" do
-    allow(Kernel).to receive(:gets).and_return("fight")
-    allow(Kernel).to receive(:play_again).and_return("n")
-    gamestate.play
-    expect(gamestate.game_over?).to eq(true)
+  it "validates the player can try again on game over" do
+    expect(STDOUT).to receive(:puts).with("Would you like to play again (Y/N)?")
+    allow(STDIN).to receive(:gets).and_return("Y")
+    expect(gamestate).to receive(:reset)
+    expect(gamestate).to receive(:play)
+    gamestate.ask_player_to_try_again
   end
 
-  # Use a fixture for this test
-  it "evaluates a winning condition properly" do
-
-  end
-
-  # Not passing. Need to manipulate the variables at play.
-  it "determines a successful fight" do
-    @attempt = 94
-    @fighting_chance = 95
-    expect(gamestate.fight_successful?).to eq(true)
-  end
-
-  # Same idea as above.
-  it "determines a successful bluff" do
-
-  end
-
-  it "progresses the game after a successful fight or bluff" do
-
-  end
-
-  it "outputs game over text to player" do
-    # I dont want this line here.. but I have to.
-    expect(STDOUT).to receive(:puts).with("Please enter a filename or file path for castle data.").ordered
-    expect(STDOUT).to receive(:puts).with("Your score: 0!").ordered
-    expect(STDOUT).to receive(:puts).with("GAME OVER!").ordered
-    expect(STDOUT).to receive(:puts).with("*************************").ordered
-    gamestate.game_over
-  end
-
-  it "resets the game to starting values" do
-
-  end
-
-  it "resets the move list back to full list" do
-
+  it "validates the player can decline a try again" do
+    expect(STDOUT).to receive(:puts).with("Would you like to play again (Y/N)?")
+    allow(STDIN).to receive(:gets).and_return("N")
+    expect(STDOUT).to receive(:puts).with("Thanks for playing!")
+    gamestate.ask_player_to_try_again
   end
 end
