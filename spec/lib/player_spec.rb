@@ -1,7 +1,7 @@
 require 'rspec'
 require 'rspec/core'
-require_relative '../../gamestate.rb'
-require_relative '../../player.rb'
+require_relative '../../lib/gamestate.rb'
+require_relative '../../lib/player.rb'
 
 describe Player do
   let(:player) { Player.new }

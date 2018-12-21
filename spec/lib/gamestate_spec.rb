@@ -1,6 +1,6 @@
 require 'rspec'
 require 'rspec/core'
-require_relative '../../gamestate.rb'
+require_relative '../../lib/gamestate.rb'
 
 describe Gamestate do
   let(:castle_data) do [{"name"=>"Old Timey Medieval Castle",
@@ -40,10 +40,18 @@ describe Gamestate do
     gamestate.ask_player_to_try_again
   end
 
-  it "validates the player can decline a try again" do
+  it "validates the player can decline a try again on game over" do
     expect(STDOUT).to receive(:puts).with("Would you like to play again (Y/N)?")
     allow(STDIN).to receive(:gets).and_return("N")
     expect(STDOUT).to receive(:puts).with("Thanks for playing!")
     gamestate.ask_player_to_try_again
+  end
+
+  it "resets the game and game data accurately" do
+    expect(STDOUT).to receive(:puts).with("*" * 25)
+    expect(STDOUT).to receive(:puts).with("Starting a new game..")
+    expect(STDOUT).to receive(:puts).with("*" * 25)
+    expect(gamestate.instance_variable_get(:@castle_order)).to eq(0)
+    gamestate.reset
   end
 end

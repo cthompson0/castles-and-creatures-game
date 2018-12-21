@@ -46,13 +46,13 @@ class Player
     puts "*" * 25
   end
 
-  def game_over
+  def game_over_report
     puts "Your score: #{@treasure}!"
     puts "GAME OVER!"
     puts "*" * 25
   end
 
-  def game_over?
+  def dead?
     @lives <= 0
   end
 end

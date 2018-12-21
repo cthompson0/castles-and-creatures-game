@@ -4,7 +4,8 @@ class GameInterface
 
   def initialize
     castle_data = load_file
-    Gamestate.new(castle_data)
+    @game = Gamestate.new(castle_data)
+    @game.play
   end
 
   def load_file

@@ -1,11 +1,11 @@
 require 'rspec'
 require 'rspec/core'
 require 'json'
-require_relative '../../room.rb'
+require_relative '../../lib/room.rb'
 
 describe Room do
   before do
-    file = File.read('../../game-layout.json')
+    file = File.read('./game-layout.json')
     @castle_data = JSON.parse(file)
     @room_data = @castle_data[0]["rooms"][0]
   end

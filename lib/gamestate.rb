@@ -13,7 +13,6 @@ class Gamestate
     @castle_data.each do |data|
       @castles << Castle.new(data)
     end
-    play
   end
 
   def current_castle
@@ -25,35 +24,41 @@ class Gamestate
   end
 
   def next_castle_if_complete
-    if current_castle.complete?
+    if current_castle.complete? && @castle_order < @castles.count - 1
       @castle_order += 1
     end
   end
 
   def play
-      current_castle.phasing
-      player_move
-    if @player.game_over?
-      @player.game_over
-      puts "Would you like to play again (Y/N)?"
-      @play_again = gets.chomp.downcase
-      case @play_again
-      when "Y"
-        reset
-        play
-      when "N"
-        puts "Thanks for playing!"
-      else
-        puts "Please select Y or N to continue."
-      end
+    current_castle.phasing
+    player_move
+    if @player.dead?
+      @player.game_over_report
+      ask_player_to_try_again
+    elsif win_condition?
+      win
     else
       play
     end
   end
 
+  def ask_player_to_try_again
+    puts "Would you like to play again (Y/N)?"
+    play_again = STDIN.gets.chomp.downcase
+    if play_again == "y"
+      reset
+      play
+    elsif play_again == "n"
+      puts "Thanks for playing!"
+      exit
+    else
+      "Please select Y or N to continue."
+    end
+  end
+
   def player_move
     @player.move_text
-    @selected_move = Kernel.gets.chomp
+    @selected_move = STDIN.gets.chomp
 
     case @selected_move.downcase
     when "fight"
@@ -61,17 +66,13 @@ class Gamestate
         current_room.monster_fight_win_text
         @player.reset_move_list
         @player.add_treasure(current_room.points)
-        # if they_won_the_game
-        unless win_condition?
-          # change these method names
           current_castle.progress_to_next_room
           next_castle_if_complete
-        end
       else
         @player.lives -= 1
         current_room.monster_fight_fail_text
         @player.lives_check
-        unless @player.game_over?
+        unless @player.dead?
           player_move
         end
       end
@@ -99,13 +100,13 @@ class Gamestate
   end
 
   def win_condition?
-    @castles.count - 1 == @castle_order && current_castle.complete?
+    @castles.count - 1 == @castle_order && current_castle.rooms.count == current_castle.room_number
   end
 
   def win
     puts "You have successfully collected all the treasure!"
-    reset
-    play
+    @player.game_over_report
+    ask_player_to_try_again
   end
 
   def reset

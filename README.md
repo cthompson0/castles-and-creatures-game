@@ -48,23 +48,17 @@ The game runs and builds itself with a supplied JSON file containing a series of
 
 ### Installing
 
-Download the repo into a local folder and navigate to the folder within terminal using:
-> cd /directory_name/folder_name/
-
 Once inside the game directory run:
 > bundle install
 
 In order to install all the necessary dependencies.
 
 ### Running tests
-RSpec will be required for running these tests.
-By typing
+You can run the entire test suite from the root directory with
+> rspec
+
+Alternatively, you can run tests individually with
 > rspec (file_spec.rb)
-
-You can run the desired test file. Alternatively,
-> rspec test/unit/
-
-Will run all the test files in the selected folder.
 
 ### Running the Game
 By typing

@@ -1,21 +1,21 @@
 require 'rspec'
 require 'rspec/core'
 require 'json'
-require_relative '../../castle.rb'
-require_relative '../../room.rb'
+require_relative '../../lib/castle.rb'
+require_relative '../../lib/room.rb'
 
 describe Castle do
   before do
-    file = File.read('../../game-layout.json')
+    file = File.read('./game-layout.json')
     @castle_data = JSON.parse(file)
   end
 
   let(:castle) { Castle.new(@castle_data[0]) }
 
   it "initializes a castle with proper attributes" do
-    expect(castle).to have_attributes(:name => "Old Timey Medieval Castle")
-    expect(castle).to have_attributes(:room => 0)
-    expect(castle.rooms[0]).to have_attributes(:name => "dungeon")
+    expect(castle).to have_attributes(name: "Old Timey Medieval Castle")
+    expect(castle).to have_attributes(room_number: 0)
+    expect(castle.rooms[0]).to have_attributes(name: "dungeon")
   end
 
   it "returns the current room data within the castle" do
@@ -24,10 +24,6 @@ describe Castle do
     expect(castle.current_room.win_chance).to eq(95)
     expect(castle.current_room.points).to eq(10)
     expect(castle.current_room.treasure).to eq("jail cell key")
-  end
-
-  it "initiates the proper game phases within the castle" do
-    allow(castle.phasing).to receive(:castle_phase).ordered
   end
 
   it "progresses through rooms of a castle" do
