@@ -3,12 +3,11 @@ require_relative 'room'
 class Castle
   attr_accessor :name, :rooms, :room_number
 
-  def initialize(data, rooms = [])
+  def initialize(data)
     @name = data["name"]
-    @rooms = rooms
     @room_number = 0
-    data["rooms"].each do |room|
-      @rooms << Room.new(room)
+    @rooms = data["rooms"].map do |room|
+      Room.new(room)
     end
   end
 
@@ -16,14 +15,13 @@ class Castle
     @rooms[@room_number]
   end
 
-  def phasing
-    castle_phase
+  def progress_through_game_phases
+    print_castle_progress
     current_room.room_phase
     current_room.monster_phase
   end
 
   def progress_to_next_room
-    puts "You quickly put it into your pouch. (+#{current_room.points} pts!)"
     if complete?
       room_reset
     else
@@ -43,7 +41,7 @@ class Castle
     @room_number == @rooms.count
   end
 
-  def castle_phase
+  def print_castle_progress
     if @room_number == 0
       puts "You cautiously approach a #{@name} and venture inside."
     else

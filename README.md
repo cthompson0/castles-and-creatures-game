@@ -1,10 +1,10 @@
 # Castles and Creatures
 
-## Getting Started
+### Getting Started
 
 ### Prerequisites
 
-The game runs and builds itself with a supplied JSON file containing a series of castles, rooms, monsters and treasures. The supplied JSON file will need to be an array of castles adhering to the following format:
+The game runs and builds itself with a supplied JSON file containing a series of castles, rooms, monsters and treasures. The supplied JSON file will need to be an array of hashes containing castle data adhering to the following format:
 
 ```
       "name": "Old Timey Medieval Castle",
@@ -62,11 +62,11 @@ Alternatively, you can run tests individually with
 
 ### Running the Game
 By typing
-> ruby game.rb
+> ruby lib/game.rb
 
 The game should run successfully and require a file path to a JSON file (mentioned above) to build itself. A default game-layout.json will be provided to you.
 
-## Rules of the Game
+### Rules of the Game
 
 The player will progress sequentially through a series of castles and their rooms, fighting various monsters for the treasure they protect. 
 

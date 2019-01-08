@@ -20,6 +20,7 @@ class Room
   def monster_fight_win_text
     puts "You successfully defeated the #{@monster}!"
     puts "You find a #{@treasure} clutched in a hand of the now lifeless #{@monster}."
+    puts "You quickly put it into your pouch. (+#{@points} pts!)"
   end
 
   def monster_fight_fail_text
@@ -30,6 +31,7 @@ class Room
   def monster_bluff_win_text
     puts "You successfully scare the #{@monster} and cause them to flee!"
     puts "You find a #{@treasure} on the floor where the #{@monster} was standing."
+    puts "You quickly put it into your pouch. (+#{@points} pts!)"
   end
 
   def monster_bluff_fail_text

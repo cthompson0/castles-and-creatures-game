@@ -4,15 +4,15 @@ class Player
   DEFAULT_LIVES = 9
   DEFAULT_TREASURE = 0
 
-  def initialize(lives=DEFAULT_LIVES, treasure=DEFAULT_TREASURE)
-    @lives = lives
-    @treasure = treasure
-    @move_list = %w(Fight Bluff Treasure Lives)
+  def initialize
+    self.lives = DEFAULT_LIVES
+    self.treasure = DEFAULT_TREASURE
+    self.move_list = %w(Fight Bluff Treasure Lives)
   end
 
   def reset
-    @lives = DEFAULT_LIVES
-    @treasure = DEFAULT_TREASURE
+    self.lives = DEFAULT_LIVES
+    self.treasure = DEFAULT_TREASURE
   end
 
   def bluff_successful?
@@ -20,29 +20,29 @@ class Player
   end
 
   def add_treasure(treasure)
-    @treasure += treasure
+    self.treasure += treasure
   end
 
   def lives_check
-    puts "You currently have #{@lives} lives left."
+    puts "You currently have #{self.lives} lives left."
   end
 
   def treasure_check
-    puts "You currently have #{@treasure} points."
+    puts "You currently have #{self.treasure} points."
   end
 
   def remove_bluff
-    @move_list.delete("Bluff")
+    self.move_list.delete("Bluff")
   end
 
   def reset_move_list
-    @move_list = %w(Fight Bluff Treasure Lives)
+    self.move_list = %w(Fight Bluff Treasure Lives)
   end
 
   def move_text
     puts "*" * 25
     puts "What would you like to do?"
-    puts @move_list
+    puts self.move_list
     puts "*" * 25
   end
 
@@ -53,6 +53,6 @@ class Player
   end
 
   def dead?
-    @lives <= 0
+    self.lives <= 0
   end
 end
