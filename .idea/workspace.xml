@@ -2,20 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e2aca806-8f10-417e-afef-f4e71094c7cf" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/spec/integration/config/game-layout-lose.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spec/integration/config/game-layout-win.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/castle.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/castle.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/game.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game_interface.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/game_interface.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gamestate.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/gamestate.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/player.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/player.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/room.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/room.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/unit/castle_spec.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/lib/castle_spec.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/unit/gamestate_spec.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/lib/gamestate_spec.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/unit/player_spec.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/lib/player_spec.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/unit/room_spec.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/lib/room_spec.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spec/integration/game_spec.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/integration/game_spec.rb" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -74,6 +61,7 @@
     <SUITE FILE_PATH="coverage/castles_and_creatures@Player_outputs_to_the_player_the_current_lives_left__castles_and_creatures.rcov" NAME="Player outputs to the player the current lives left: castles_and_creatures Coverage Results" MODIFIED="1545246106874" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/unit" MODULE_NAME="castles_and_creatures" />
     <SUITE FILE_PATH="coverage/castles_and_creatures@Gamestate_validates_the_player_can_decline_a_try_again_on_game_over__castles_and_creatures.rcov" NAME="Gamestate validates the player can decline a try again on game over: castles_and_creatures Coverage Results" MODIFIED="1545420072128" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="castles_and_creatures" />
     <SUITE FILE_PATH="coverage/castles_and_creatures@Run_spec__player_spec___castles_and_creatures.rcov" NAME="Run spec 'player_spec': castles_and_creatures Coverage Results" MODIFIED="1545333864209" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/unit" MODULE_NAME="castles_and_creatures" />
+    <SUITE FILE_PATH="coverage/castles_and_creatures@Gamestate_winning_conditions_validates_the_player_can_win_a_game__castles_and_creatures.rcov" NAME="Gamestate winning conditions validates the player can win a game: castles_and_creatures Coverage Results" MODIFIED="1546988713501" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="castles_and_creatures" />
     <SUITE FILE_PATH="coverage/castles_and_creatures@Player_initializes_the_game_with_the_appropriate_amount_of_rooms__castles_and_creatures.rcov" NAME="Player initializes the game with the appropriate amount of rooms: castles_and_creatures Coverage Results" MODIFIED="1544550978186" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="castles_and_creatures" />
     <SUITE FILE_PATH="coverage/castles_and_creatures@Player_resets_the_player_values_to_default__castles_and_creatures.rcov" NAME="Player resets the player values to default: castles_and_creatures Coverage Results" MODIFIED="1544837844567" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/unit" MODULE_NAME="castles_and_creatures" />
     <SUITE FILE_PATH="coverage/castles_and_creatures@Player_initializes_the_player_with_lives_and_treasure__castles_and_creatures.rcov" NAME="Player initializes the player with lives and treasure: castles_and_creatures Coverage Results" MODIFIED="1545245706974" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/unit" MODULE_NAME="castles_and_creatures" />
@@ -90,7 +78,9 @@
     <SUITE FILE_PATH="coverage/castles_and_creatures@castles_and_creatures_test.rcov" NAME="castles_and_creatures_test Coverage Results" MODIFIED="1542760314177" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="castles_and_creatures" />
     <SUITE FILE_PATH="coverage/castles_and_creatures@GameState_plays_the_game_in_proper_phases__castles_and_creatures.rcov" NAME="GameState plays the game in proper phases: castles_and_creatures Coverage Results" MODIFIED="1545074132600" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/unit" MODULE_NAME="castles_and_creatures" />
     <SUITE FILE_PATH="coverage/castles_and_creatures@Player_outputs_to_the_player_the_treasure_amount_collected__castles_and_creatures.rcov" NAME="Player outputs to the player the treasure amount collected: castles_and_creatures Coverage Results" MODIFIED="1545246122868" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/unit" MODULE_NAME="castles_and_creatures" />
+    <SUITE FILE_PATH="coverage/castles_and_creatures@Run_spec__game_spec___castles_and_creatures.rcov" NAME="Run spec 'game_spec': castles_and_creatures Coverage Results" MODIFIED="1546989088439" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="castles_and_creatures" />
     <SUITE FILE_PATH="coverage/castles_and_creatures@Player_initializes_a_castle_object_successfully__castles_and_creatures.rcov" NAME="Player initializes a castle object successfully: castles_and_creatures Coverage Results" MODIFIED="1544551125012" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="castles_and_creatures" />
+    <SUITE FILE_PATH="coverage/castles_and_creatures@Gamestate_losing_conditions_validates_the_player_can_lose_a_game__castles_and_creatures.rcov" NAME="Gamestate losing conditions validates the player can lose a game: castles_and_creatures Coverage Results" MODIFIED="1546988742649" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="castles_and_creatures" />
     <SUITE FILE_PATH="coverage/castles_and_creatures@Run_spec__castle_spec___castles_and_creatures.rcov" NAME="Run spec 'castle_spec': castles_and_creatures Coverage Results" MODIFIED="1545245335347" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/unit" MODULE_NAME="castles_and_creatures" />
     <SUITE FILE_PATH="coverage/castles_and_creatures@Castle_initializes_a_castle_with_proper_attributes__castles_and_creatures.rcov" NAME="Castle initializes a castle with proper attributes: castles_and_creatures Coverage Results" MODIFIED="1545351724387" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="castles_and_creatures" />
     <SUITE FILE_PATH="coverage/castles_and_creatures@Player_initializes_a_castle_with_proper_attributes__castles_and_creatures.rcov" NAME="Player initializes a castle with proper attributes: castles_and_creatures Coverage Results" MODIFIED="1544557288934" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="castles_and_creatures" />
@@ -99,6 +89,7 @@
     <SUITE FILE_PATH="coverage/castles_and_creatures@Player_initializes_a_room_with_proper_attributes__castles_and_creatures.rcov" NAME="Player initializes a room with proper attributes: castles_and_creatures Coverage Results" MODIFIED="1544557432115" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="castles_and_creatures" />
     <SUITE FILE_PATH="coverage/castles_and_creatures@GameState_initializes_the_game_with_the_appropriate_amount_of_rooms__castles_and_creatures.rcov" NAME="GameState initializes the game with the appropriate amount of rooms: castles_and_creatures Coverage Results" MODIFIED="1544576348178" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="castles_and_creatures" />
     <SUITE FILE_PATH="coverage/castles_and_creatures@GameState_accepts_a_chosen_player_move__castles_and_creatures.rcov" NAME="GameState accepts a chosen player move: castles_and_creatures Coverage Results" MODIFIED="1545086617802" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/unit" MODULE_NAME="castles_and_creatures" />
+    <SUITE FILE_PATH="coverage/castles_and_creatures@Game_winning_conditions_validates_the_player_can_win_a_game__castles_and_creatures.rcov" NAME="Game winning conditions validates the player can win a game: castles_and_creatures Coverage Results" MODIFIED="1546989072683" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="castles_and_creatures" />
     <SUITE FILE_PATH="coverage/castles_and_creatures@Room_outputs_to_the_player_the_correct_monster_they_are_fighting__castles_and_creatures.rcov" NAME="Room outputs to the player the correct monster they are fighting: castles_and_creatures Coverage Results" MODIFIED="1544841953830" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/unit" MODULE_NAME="castles_and_creatures" />
     <SUITE FILE_PATH="coverage/castles_and_creatures@Player_outputs_the_move_phase_text_to_the_player__castles_and_creatures.rcov" NAME="Player outputs the move phase text to the player: castles_and_creatures Coverage Results" MODIFIED="1545246377163" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/unit" MODULE_NAME="castles_and_creatures" />
     <SUITE FILE_PATH="coverage/castles_and_creatures@Castle_initializes_the_game_with_a_monster_in_a_room__castles_and_creatures.rcov" NAME="Castle initializes the game with a monster in a room: castles_and_creatures Coverage Results" MODIFIED="1544653862269" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/unit" MODULE_NAME="castles_and_creatures" />
@@ -146,28 +137,56 @@
         </counts>
       </usages-collector>
     </session>
+    <session id="707287333">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.open.time.1" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="rb" value="400" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="Ruby" value="400" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="rb" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="Ruby" value="1" />
+        </counts>
+      </usages-collector>
+    </session>
   </component>
   <component name="FavoritesManager">
     <favorites_list name="castles_and_creatures" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.51896065">
+    <splitter split-orientation="horizontal" split-proportion="0.53510326">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/lib/game.rb">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="30">
-                  <caret line="2" column="11" lean-forward="true" selection-start-line="2" selection-start-column="11" selection-end-line="2" selection-end-column="11" />
+                  <caret line="2" column="11" selection-start-line="2" selection-start-column="11" selection-end-line="2" selection-end-column="11" />
                 </state>
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/spec/integration/game_spec.rb">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="330">
-                  <caret line="22" column="24" lean-forward="true" selection-start-line="22" selection-start-column="24" selection-end-line="22" selection-end-column="24" />
+                <state relative-caret-position="255">
+                  <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
                 </state>
               </provider>
             </entry>
@@ -175,17 +194,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/lib/player.rb">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-358">
+                <state relative-caret-position="45">
                   <caret line="3" column="19" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="19" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/lib/game_interface.rb">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="105">
-                  <caret line="7" column="14" lean-forward="true" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="14" />
                 </state>
               </provider>
             </entry>
@@ -193,17 +203,17 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/lib/castle.rb">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="222">
-                  <caret line="42" column="32" selection-start-line="42" selection-start-column="32" selection-end-line="42" selection-end-column="32" />
+                <state relative-caret-position="630">
+                  <caret line="42" lean-forward="true" selection-start-line="42" selection-end-line="42" />
                 </state>
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/lib/gamestate.rb">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="284">
-                  <caret line="60" column="36" selection-start-line="60" selection-start-column="36" selection-end-line="60" selection-end-column="36" />
+                <state relative-caret-position="354">
+                  <caret line="87" column="7" lean-forward="true" selection-start-line="87" selection-start-column="7" selection-end-line="87" selection-end-column="7" />
                 </state>
               </provider>
             </entry>
@@ -229,20 +239,29 @@
         </leaf>
       </split-first>
       <split-second>
-        <leaf>
-          <file pinned="false" current-in-tab="true">
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/spec/lib/gamestate_spec.rb">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="630">
+                <state relative-caret-position="154">
                   <caret line="42" column="32" lean-forward="true" selection-start-line="42" selection-start-column="32" selection-end-line="42" selection-end-column="32" />
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/lib/game_interface.rb">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="120">
+                  <caret line="8" column="5" lean-forward="true" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/spec/lib/castle_spec.rb">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-253">
+                <state relative-caret-position="-448">
                   <caret line="7" selection-start-line="7" selection-end-line="10" selection-end-column="5" />
                 </state>
               </provider>
@@ -316,10 +335,10 @@
         <option value="$PROJECT_DIR$/spec/integration/lib/game-layout-lose.json" />
         <option value="$PROJECT_DIR$/castle.rb" />
         <option value="$PROJECT_DIR$/player.rb" />
-        <option value="$PROJECT_DIR$/spec/integration/game_spec.rb" />
         <option value="$PROJECT_DIR$/gamestate.rb" />
         <option value="$PROJECT_DIR$/spec/lib/gamestate_spec.rb" />
         <option value="$PROJECT_DIR$/lib/gamestate.rb" />
+        <option value="$PROJECT_DIR$/spec/integration/game_spec.rb" />
       </list>
     </option>
   </component>
@@ -329,9 +348,10 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="y" value="23" />
-    <option name="width" value="1466" />
+  <component name="ProjectFrameBounds" extendedState="1">
+    <option name="x" value="78" />
+    <option name="y" value="24" />
+    <option name="width" value="1737" />
     <option name="height" value="877" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
@@ -466,6 +486,12 @@
             </path>
             <path>
               <item name="castles_and_creatures" type="b2602c69:ProjectViewProjectNode" />
+              <item name="castles_and_creatures" type="462c0819:PsiDirectoryNode" />
+              <item name="spec" type="462c0819:PsiDirectoryNode" />
+              <item name="integration" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="castles_and_creatures" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
             <path>
@@ -503,8 +529,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="RSpec.Gamestate validates the player can decline a try again on game over: castles_and_creatures">
-    <configuration name="Gamestate resets the game and game data accurately: castles_and_creatures" type="RSpecRunConfigurationType" factoryName="RSpec" temporary="true">
+  <component name="RunManager" selected="RSpec.Run spec 'game_spec': castles_and_creatures">
+    <configuration name="Game winning conditions validates the player can win a game: castles_and_creatures" type="RSpecRunConfigurationType" factoryName="RSpec" temporary="true">
       <predefined_log_file id="RUBY_RSPEC" enabled="true" />
       <module name="castles_and_creatures" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="" />
@@ -523,10 +549,43 @@
         </COVERAGE_PATTERN>
       </EXTENSION>
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="$MODULE_DIR$/spec/lib/gamestate_spec.rb" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="$MODULE_DIR$/spec/integration/game_spec.rb" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_RUNNER_PATH" VALUE="" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="'**/*_spec.rb'" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_EXAMPLE_NAME" VALUE="Gamestate resets the game and game data accurately" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_EXAMPLE_NAME" VALUE="Game winning conditions validates the player can win a game" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="TEST_SCRIPT" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_ARGS" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="RUNNER_VERSION" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="USE_CUSTOM_SPEC_RUNNER" VALUE="false" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="DRB" VALUE="false" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="ZEUS" VALUE="false" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPRING" VALUE="false" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="FULL_BACKTRACE" VALUE="false" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Gamestate losing conditions validates the player can lose a game: castles_and_creatures" type="RSpecRunConfigurationType" factoryName="RSpec" temporary="true">
+      <predefined_log_file id="RUBY_RSPEC" enabled="true" />
+      <module name="castles_and_creatures" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$MODULE_DIR$" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
+      <envs>
+        <env name="JRUBY_OPTS" value="-X+O" />
+      </envs>
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="true" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" track_test_folders="true" runner="rcov">
+        <COVERAGE_PATTERN ENABLED="true">
+          <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
+        </COVERAGE_PATTERN>
+      </EXTENSION>
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="$MODULE_DIR$/spec/integration/game_spec.rb" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_RUNNER_PATH" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="'**/*_spec.rb'" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_EXAMPLE_NAME" VALUE="Gamestate losing conditions validates the player can lose a game" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="TEST_SCRIPT" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_ARGS" VALUE="" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="RUNNER_VERSION" VALUE="" />
@@ -570,7 +629,7 @@
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="FULL_BACKTRACE" VALUE="false" />
       <method v="2" />
     </configuration>
-    <configuration name="Gamestate validates the player can try again on game over: castles_and_creatures" type="RSpecRunConfigurationType" factoryName="RSpec" temporary="true">
+    <configuration name="Gamestate winning conditions validates the player can win a game: castles_and_creatures" type="RSpecRunConfigurationType" factoryName="RSpec" temporary="true">
       <predefined_log_file id="RUBY_RSPEC" enabled="true" />
       <module name="castles_and_creatures" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="" />
@@ -589,10 +648,10 @@
         </COVERAGE_PATTERN>
       </EXTENSION>
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="$MODULE_DIR$/spec/lib/gamestate_spec.rb" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="$MODULE_DIR$/spec/integration/game_spec.rb" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_RUNNER_PATH" VALUE="" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="'**/*_spec.rb'" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_EXAMPLE_NAME" VALUE="Gamestate validates the player can try again on game over" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_EXAMPLE_NAME" VALUE="Gamestate winning conditions validates the player can win a game" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="TEST_SCRIPT" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_ARGS" VALUE="" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="RUNNER_VERSION" VALUE="" />
@@ -603,7 +662,7 @@
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="FULL_BACKTRACE" VALUE="false" />
       <method v="2" />
     </configuration>
-    <configuration name="Run spec 'gamestate_spec': castles_and_creatures" type="RSpecRunConfigurationType" factoryName="RSpec" temporary="true">
+    <configuration name="Run spec 'game_spec': castles_and_creatures" type="RSpecRunConfigurationType" factoryName="RSpec" temporary="true">
       <predefined_log_file id="RUBY_RSPEC" enabled="true" />
       <module name="castles_and_creatures" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="" />
@@ -622,7 +681,7 @@
         </COVERAGE_PATTERN>
       </EXTENSION>
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="$MODULE_DIR$/spec/lib/gamestate_spec.rb" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="$MODULE_DIR$/spec/integration/game_spec.rb" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_RUNNER_PATH" VALUE="" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="'**/*_spec.rb'" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_EXAMPLE_NAME" VALUE="" />
@@ -636,38 +695,20 @@
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="FULL_BACKTRACE" VALUE="false" />
       <method v="2" />
     </configuration>
-    <configuration name="game" type="RubyRunConfigurationType" factoryName="Ruby" temporary="true">
-      <module name="castles_and_creatures" />
-      <RUBY_RUN_CONFIG NAME="RUBY_ARGS" VALUE="" />
-      <RUBY_RUN_CONFIG NAME="WORK DIR" VALUE="$MODULE_DIR$" />
-      <RUBY_RUN_CONFIG NAME="SHOULD_USE_SDK" VALUE="false" />
-      <RUBY_RUN_CONFIG NAME="ALTERN_SDK_NAME" VALUE="" />
-      <RUBY_RUN_CONFIG NAME="myPassParentEnvs" VALUE="true" />
-      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="true" />
-      <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
-      <EXTENSION ID="RubyCoverageRunConfigurationExtension" track_test_folders="true" runner="rcov">
-        <COVERAGE_PATTERN ENABLED="true">
-          <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
-        </COVERAGE_PATTERN>
-      </EXTENSION>
-      <RUBY_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="$MODULE_DIR$/lib/game.rb" />
-      <RUBY_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="" />
-      <method v="2" />
-    </configuration>
     <list>
-      <item itemvalue="Ruby.game" />
-      <item itemvalue="RSpec.Gamestate resets the game and game data accurately: castles_and_creatures" />
-      <item itemvalue="RSpec.Run spec 'gamestate_spec': castles_and_creatures" />
       <item itemvalue="RSpec.Gamestate validates the player can decline a try again on game over: castles_and_creatures" />
-      <item itemvalue="RSpec.Gamestate validates the player can try again on game over: castles_and_creatures" />
+      <item itemvalue="RSpec.Gamestate winning conditions validates the player can win a game: castles_and_creatures" />
+      <item itemvalue="RSpec.Gamestate losing conditions validates the player can lose a game: castles_and_creatures" />
+      <item itemvalue="RSpec.Run spec 'game_spec': castles_and_creatures" />
+      <item itemvalue="RSpec.Game winning conditions validates the player can win a game: castles_and_creatures" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="RSpec.Run spec 'game_spec': castles_and_creatures" />
+        <item itemvalue="RSpec.Game winning conditions validates the player can win a game: castles_and_creatures" />
+        <item itemvalue="RSpec.Gamestate losing conditions validates the player can lose a game: castles_and_creatures" />
+        <item itemvalue="RSpec.Gamestate winning conditions validates the player can win a game: castles_and_creatures" />
         <item itemvalue="RSpec.Gamestate validates the player can decline a try again on game over: castles_and_creatures" />
-        <item itemvalue="RSpec.Gamestate validates the player can try again on game over: castles_and_creatures" />
-        <item itemvalue="RSpec.Run spec 'gamestate_spec': castles_and_creatures" />
-        <item itemvalue="RSpec.Gamestate resets the game and game data accurately: castles_and_creatures" />
-        <item itemvalue="Ruby.game" />
       </list>
     </recent_temporary>
   </component>
@@ -684,43 +725,44 @@
       <updated>1542751627646</updated>
       <workItem from="1542751629602" duration="17848000" />
       <workItem from="1543617179067" duration="162916000" />
+      <workItem from="1546972773728" duration="4381000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Gamestate_validates_the_player_can_lose_a_game__castles_and_creatures - 2018.12.21 at 11h 02m 25s.xml">
-      <configuration name="Gamestate validates the player can lose a game: castles_and_creatures" configurationId="RSpecRunConfigurationType" />
+    <history-entry file="Gamestate_winning_conditions_validates_the_player_can_win_a_game__castles_and_creatures - 2019.01.08 at 15h 01m 00s.xml">
+      <configuration name="Gamestate winning conditions validates the player can win a game: castles_and_creatures" configurationId="RSpecRunConfigurationType" />
     </history-entry>
-    <history-entry file="Gamestate_resets_the_game_and_game_data_accurately__castles_and_creatures - 2018.12.21 at 11h 16m 35s.xml">
-      <configuration name="Gamestate resets the game and game data accurately: castles_and_creatures" configurationId="RSpecRunConfigurationType" />
+    <history-entry file="Gamestate_winning_conditions_validates_the_player_can_win_a_game__castles_and_creatures - 2019.01.08 at 15h 02m 23s.xml">
+      <configuration name="Gamestate winning conditions validates the player can win a game: castles_and_creatures" configurationId="RSpecRunConfigurationType" />
     </history-entry>
-    <history-entry file="Gamestate_resets_the_game_and_game_data_accurately__castles_and_creatures - 2018.12.21 at 11h 16m 44s.xml">
-      <configuration name="Gamestate resets the game and game data accurately: castles_and_creatures" configurationId="RSpecRunConfigurationType" />
+    <history-entry file="Gamestate_winning_conditions_validates_the_player_can_win_a_game__castles_and_creatures - 2019.01.08 at 15h 04m 03s.xml">
+      <configuration name="Gamestate winning conditions validates the player can win a game: castles_and_creatures" configurationId="RSpecRunConfigurationType" />
     </history-entry>
-    <history-entry file="Gamestate_resets_the_game_and_game_data_accurately__castles_and_creatures - 2018.12.21 at 11h 17m 12s.xml">
-      <configuration name="Gamestate resets the game and game data accurately: castles_and_creatures" configurationId="RSpecRunConfigurationType" />
+    <history-entry file="Gamestate_winning_conditions_validates_the_player_can_win_a_game__castles_and_creatures - 2019.01.08 at 15h 04m 37s.xml">
+      <configuration name="Gamestate winning conditions validates the player can win a game: castles_and_creatures" configurationId="RSpecRunConfigurationType" />
     </history-entry>
-    <history-entry file="Gamestate_resets_the_game_and_game_data_accurately__castles_and_creatures - 2018.12.21 at 11h 17m 36s.xml">
-      <configuration name="Gamestate resets the game and game data accurately: castles_and_creatures" configurationId="RSpecRunConfigurationType" />
+    <history-entry file="Gamestate_winning_conditions_validates_the_player_can_win_a_game__castles_and_creatures - 2019.01.08 at 15h 05m 03s.xml">
+      <configuration name="Gamestate winning conditions validates the player can win a game: castles_and_creatures" configurationId="RSpecRunConfigurationType" />
     </history-entry>
-    <history-entry file="Run_spec_'gamestate_spec'__castles_and_creatures - 2018.12.21 at 11h 20m 04s.xml">
-      <configuration name="Run spec 'gamestate_spec': castles_and_creatures" configurationId="RSpecRunConfigurationType" />
+    <history-entry file="Gamestate_winning_conditions_validates_the_player_can_win_a_game__castles_and_creatures - 2019.01.08 at 15h 05m 14s.xml">
+      <configuration name="Gamestate winning conditions validates the player can win a game: castles_and_creatures" configurationId="RSpecRunConfigurationType" />
     </history-entry>
-    <history-entry file="Gamestate_validates_the_player_can_decline_a_try_again_on_game_over__castles_and_creatures - 2018.12.21 at 11h 20m 18s.xml">
-      <configuration name="Gamestate validates the player can decline a try again on game over: castles_and_creatures" configurationId="RSpecRunConfigurationType" />
+    <history-entry file="Gamestate_losing_conditions_validates_the_player_can_lose_a_game__castles_and_creatures - 2019.01.08 at 15h 05m 43s.xml">
+      <configuration name="Gamestate losing conditions validates the player can lose a game: castles_and_creatures" configurationId="RSpecRunConfigurationType" />
     </history-entry>
-    <history-entry file="Gamestate_validates_the_player_can_try_again_on_game_over__castles_and_creatures - 2018.12.21 at 11h 20m 39s.xml">
-      <configuration name="Gamestate validates the player can try again on game over: castles_and_creatures" configurationId="RSpecRunConfigurationType" />
+    <history-entry file="Run_spec_'game_spec'__castles_and_creatures - 2019.01.08 at 15h 11m 00s.xml">
+      <configuration name="Run spec 'game_spec': castles_and_creatures" configurationId="RSpecRunConfigurationType" />
     </history-entry>
-    <history-entry file="Gamestate_validates_the_player_can_decline_a_try_again_on_game_over__castles_and_creatures - 2018.12.21 at 11h 20m 45s.xml">
-      <configuration name="Gamestate validates the player can decline a try again on game over: castles_and_creatures" configurationId="RSpecRunConfigurationType" />
+    <history-entry file="Game_winning_conditions_validates_the_player_can_win_a_game__castles_and_creatures - 2019.01.08 at 15h 11m 13s.xml">
+      <configuration name="Game winning conditions validates the player can win a game: castles_and_creatures" configurationId="RSpecRunConfigurationType" />
     </history-entry>
-    <history-entry file="Gamestate_validates_the_player_can_decline_a_try_again_on_game_over__castles_and_creatures - 2018.12.21 at 11h 21m 12s.xml">
-      <configuration name="Gamestate validates the player can decline a try again on game over: castles_and_creatures" configurationId="RSpecRunConfigurationType" />
+    <history-entry file="Run_spec_'game_spec'__castles_and_creatures - 2019.01.08 at 15h 11m 29s.xml">
+      <configuration name="Run spec 'game_spec': castles_and_creatures" configurationId="RSpecRunConfigurationType" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="180764000" />
+    <option name="totallyTimeSpent" value="185145000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -732,15 +774,14 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1466" height="877" extended-state="0" />
-    <editor active="true" />
+    <frame x="78" y="24" width="1737" height="877" extended-state="1" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.74747473" visible="true" weight="0.24508427" />
-      <window_info id="Structure" order="1" sideWeight="0.25252524" side_tool="true" weight="0.19019316" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.74229074" weight="0.24778761" />
+      <window_info id="Structure" order="1" sideWeight="0.25770926" side_tool="true" visible="true" weight="0.0" />
       <window_info id="Favorites" order="2" sideWeight="0.5019608" side_tool="true" weight="0.18796434" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49324325" weight="0.32720104" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.54206604" visible="true" weight="0.33114323" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.54206604" weight="0.40341654" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -748,7 +789,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.4946752" weight="0.2260184" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.4946752" visible="true" weight="0.2260184" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50532484" side_tool="true" weight="0.3286004" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -784,9 +825,7 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/castles_and_creatures_test_spec.rb">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/castles_and_creatures_test_spec.rb" />
     <entry file="file://$APPLICATION_HOME_DIR$/rubystubs25/kernel.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="39292">
@@ -846,6 +885,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/lib/player.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="19" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/lib/room.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="615">
@@ -853,45 +899,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/game.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="11" lean-forward="true" selection-start-line="2" selection-start-column="11" selection-end-line="2" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spec/integration/game_spec.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="24" lean-forward="true" selection-start-line="22" selection-start-column="24" selection-end-line="22" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spec/lib/castle_spec.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-253">
-          <caret line="7" selection-start-line="7" selection-end-line="10" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/castle.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
-          <caret line="42" column="32" selection-start-line="42" selection-start-column="32" selection-end-line="42" selection-end-column="32" />
+        <state relative-caret-position="630">
+          <caret line="42" lean-forward="true" selection-start-line="42" selection-end-line="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/gamestate.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="354">
+          <caret line="87" column="7" lean-forward="true" selection-start-line="87" selection-start-column="7" selection-end-line="87" selection-end-column="7" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/game_interface.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="14" lean-forward="true" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="14" />
+        <state relative-caret-position="120">
+          <caret line="8" column="5" lean-forward="true" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/player.rb">
+    <entry file="file://$PROJECT_DIR$/lib/game.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-358">
-          <caret line="3" column="19" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="19" />
+        <state relative-caret-position="30">
+          <caret line="2" column="11" selection-start-line="2" selection-start-column="11" selection-end-line="2" selection-end-column="11" />
         </state>
       </provider>
     </entry>
@@ -902,10 +934,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/gamestate.rb">
+    <entry file="file://$PROJECT_DIR$/spec/lib/castle_spec.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="284">
-          <caret line="60" column="36" selection-start-line="60" selection-start-column="36" selection-end-line="60" selection-end-column="36" />
+        <state relative-caret-position="-448">
+          <caret line="7" selection-start-line="7" selection-end-line="10" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spec/integration/game_spec.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
         </state>
       </provider>
     </entry>
