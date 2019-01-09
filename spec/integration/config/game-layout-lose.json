@@ -6,7 +6,7 @@
         "name": "dungeon",
         "monster": {
           "name": "skeleton warden",
-          "win_chance": 95
+          "win_chance": 0
         },
         "treasure": {
           "type": "jail cell key",
@@ -17,7 +17,7 @@
         "name": "the endless staircase",
         "monster": {
           "name": "cursed princess",
-          "win_chance": 80
+          "win_chance": 0
         },
         "treasure": {
           "type": "a ruby necklace",
@@ -28,7 +28,7 @@
         "name": "throne room",
         "monster": {
           "name": "the evil dragon",
-          "win_chance": 70
+          "win_chance": 0
         },
         "treasure": {
           "type": "the dragon's hoard",
@@ -44,7 +44,7 @@
         "name": "the frosty willow garden",
         "monster": {
           "name": "living ice sculptures",
-          "win_chance": 85
+          "win_chance": 0
         },
         "treasure": {
           "type": "frozen rose",
@@ -55,7 +55,7 @@
         "name": "the singing halls",
         "monster": {
           "name": "frozen ballerina army",
-          "win_chance": 85
+          "win_chance": 0
         },
         "treasure": {
           "type": "the nutcracker",
@@ -66,7 +66,7 @@
         "name": "opal ballroom",
         "monster": {
           "name": "mirror demon",
-          "win_chance": 75
+          "win_chance": 0
         },
         "treasure": {
           "type": "crystal sword",
@@ -82,7 +82,7 @@
         "name": "the kelp forest",
         "monster": {
           "name": "Shark Greasers",
-          "win_chance": 70
+          "win_chance": 0
         },
         "treasure": {
           "type": "shark tooth necklace",
@@ -93,7 +93,7 @@
         "name": "the reef dining room",
         "monster": {
           "name": "lord whaleshark",
-          "win_chance": 70
+          "win_chance": 0
         },
         "treasure": {
           "type": "pearl sceptre",
@@ -104,7 +104,7 @@
         "name": "the abyssal overlook",
         "monster": {
           "name": "mermaid queen",
-          "win_chance": 50
+          "win_chance": 0
         },
         "treasure": {
           "type": "the scale crown",
@@ -120,7 +120,7 @@
         "name": "the glittering lobby",
         "monster": {
           "name": "the insidious butler",
-          "win_chance": 85
+          "win_chance": 0
         },
         "treasure": {
           "type": "keycard",
@@ -131,7 +131,7 @@
         "name": "the poolside",
         "monster": {
           "name": "the pool boy",
-          "win_chance": 60
+          "win_chance": 0
         },
         "treasure": {
           "type": "a golden scale",
@@ -142,7 +142,7 @@
         "name": "the piano bar",
         "monster": {
           "name": "the piano man",
-          "win_chance": 60
+          "win_chance": 0
         },
         "treasure": {
           "type": "a golden scale",
@@ -153,7 +153,7 @@
         "name": "high limit room",
         "monster": {
           "name": "the joker",
-          "win_chance": 40
+          "win_chance": 0
         },
         "treasure": {
           "type": "the jackpot",
@@ -169,7 +169,7 @@
         "name": "the space shuttle",
         "monster": {
           "name": "a wookie?",
-          "win_chance": 35
+          "win_chance": 0
         },
         "treasure": {
           "type": "millenium falcon keys",
@@ -180,7 +180,7 @@
         "name": "lunar reception hall",
         "monster": {
           "name": "ursa major",
-          "win_chance": 40
+          "win_chance": 0
         },
         "treasure": {
           "type": "minature comet",
@@ -191,7 +191,7 @@
         "name": "the moonwell",
         "monster": {
           "name": "lunar goddess",
-          "win_chance": 40
+          "win_chance": 0
         },
         "treasure": {
           "type": "orion's belt",
@@ -202,7 +202,7 @@
         "name": "the starway",
         "monster": {
           "name": "the celestial",
-          "win_chance": 35
+          "win_chance": 0
         },
         "treasure": {
           "type": "forever sunlight",
@@ -213,7 +213,7 @@
         "name": "the void",
         "monster": {
           "name": "the faceless automaton",
-          "win_chance": 20
+          "win_chance": 0
         },
         "treasure": {
           "type": "the heart of a star",
